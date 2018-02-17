@@ -1,14 +1,13 @@
-pkg_name=libxpm
-pkg_distname=libXpm
+pkg_name=fontsproto
 pkg_origin=guskovd
-pkg_version=3.5.4.2
+pkg_version=2.1.3
 pkg_dirname="${pkg_distname}-${pkg_version}"
 pkg_maintainer="Danil Guskov <guskovd86@mail.ru>"
-pkg_description="X11 miscellaneous utility library"
-pkg_upstream_url="https://www.x.org/"
-pkg_license=('MIT')
-pkg_source="https://www.x.org/releases/individual/lib/${pkg_distname}-${pkg_version}.tar.bz2"
-pkg_shasum="2afa714473efc656e978ba1ab5d1feac7b5ccd3b2d5884ccca9e48a2e43c21fd"
+pkg_description="X11 font extension wire protocol"
+pkg_upstream_url="https://xorg.freedesktop.org/"
+license=('custom')
+pkg_source="https://xorg.freedesktop.org/releases/individual/proto/${pkg_name}-${pkg_version}.tar.bz2"
+pkg_shasum="259046b0dd9130825c4a4c479ba3591d6d0f17a33f54e294b56478729a6e5ab8"
 pkg_deps=(
     core/glibc
     xorg/libXt/1.1.5/20170607234359
@@ -21,6 +20,7 @@ pkg_deps=(
     xorg/libsm/1.2.2/20170607233852
 )
 pkg_build_deps=(
+    core/xproto
     core/gcc
     core/make
     core/pkg-config
@@ -45,6 +45,10 @@ _install_dependency() {
 	    }
     fi
     return 0
+}
+
+do_build() {
+    ls -lha
 }
 
 do_check() {

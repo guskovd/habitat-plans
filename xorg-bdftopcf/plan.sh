@@ -1,14 +1,14 @@
-pkg_name=libxpm
-pkg_distname=libXpm
+pkg_name=xorg-bdftopcf
+pkg_distname=bdftopcf
 pkg_origin=guskovd
-pkg_version=3.5.4.2
+pkg_version=1.1
 pkg_dirname="${pkg_distname}-${pkg_version}"
 pkg_maintainer="Danil Guskov <guskovd86@mail.ru>"
-pkg_description="X11 miscellaneous utility library"
-pkg_upstream_url="https://www.x.org/"
-pkg_license=('MIT')
-pkg_source="https://www.x.org/releases/individual/lib/${pkg_distname}-${pkg_version}.tar.bz2"
-pkg_shasum="2afa714473efc656e978ba1ab5d1feac7b5ccd3b2d5884ccca9e48a2e43c21fd"
+pkg_description="Convert X font from Bitmap Distribution Format to Portable Compiled Format"
+pkg_upstream_url="https://xorg.freedesktop.org/"
+license=('custom')
+pkg_source="https://xorg.freedesktop.org/archive/individual/app/${pkg_distname}-${pkg_version}.tar.bz2"
+pkg_shasum="4b4df05fc53f1e98993638d6f7e178d95b31745c4568cee407e167491fd311a2"
 pkg_deps=(
     core/glibc
     xorg/libXt/1.1.5/20170607234359
@@ -21,6 +21,7 @@ pkg_deps=(
     xorg/libsm/1.2.2/20170607233852
 )
 pkg_build_deps=(
+    core/xproto
     core/gcc
     core/make
     core/pkg-config
