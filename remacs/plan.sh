@@ -87,7 +87,7 @@ do_clean() {
 
 do_build() {
     ./autogen.sh
-    ./configure --with-x-toolkit=gtk2 --with-gnutls=no --with-gconf --without-gsettings --prefix="$pkg_prefix"
+    ./configure --with-gnutls=no --with-xft --with-modules --with-x-toolkit=gtk2 --with-gconf --without-gsettings --without-makeinfo RUSTFLAGS="-g" --prefix="$pkg_prefix"
     make
 }
 
