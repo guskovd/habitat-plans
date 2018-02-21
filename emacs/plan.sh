@@ -1,32 +1,102 @@
 pkg_name=emacs
 pkg_origin=guskovd
-pkg_version="0.1.0"
-pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
+pkg_version="25.3"
+pkg_maintainer="Danil Guskov <guskovd86@mail.ru>"
 pkg_license=("Apache-2.0")
-pkg_source="http://some_source_url/releases/${pkg_name}-${pkg_version}.tar.gz"
-# pkg_filename="${pkg_name}-${pkg_version}.tar.gz"
-# pkg_shasum="TODO"
-# pkg_deps=(core/glibc)
-# pkg_build_deps=(core/make core/gcc)
-# pkg_lib_dirs=(lib)
-# pkg_include_dirs=(include)
-# pkg_bin_dirs=(bin)
-# pkg_pconfig_dirs=(lib/pconfig)
-# pkg_svc_run="bin/haproxy -f $pkg_svc_config_path/haproxy.conf"
-# pkg_exports=(
-#   [host]=srv.address
-#   [port]=srv.port
-#   [ssl-port]=srv.ssl.port
-# )
-# pkg_exposes=(port ssl-port)
-# pkg_binds=(
-#   [database]="port host"
-# )
-# pkg_binds_optional=(
-#   [storage]="port host"
-# )
-# pkg_interpreters=(bin/bash)
-# pkg_svc_user="hab"
-# pkg_svc_group="$pkg_svc_user"
-# pkg_description="Some description."
-# pkg_upstream_url="http://example.com/project-name"
+pkg_source="ftp://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.xz"
+pkg_shasum="253ac5e7075e594549b83fd9ec116a9dc37294d415e2f21f8ee109829307c00b"
+pkg_deps=(
+    core/gtk2
+    core/gcc-libs
+    core/ncurses
+    core/zlib
+    core/coreutils
+    core/imagemagick
+    core/pango
+    core/glib
+    core/pcre
+    core/cairo
+    core/pixman
+    core/fontconfig
+    core/freetype
+    core/libpng
+    core/expat
+    core/harfbuzz
+    core/gdk-pixbuf
+    core/atk
+    core/giflib
+    core/libtiff
+    core/libjpeg-turbo
+    core/xlib
+    core/libxcb
+    core/libxau
+    core/libxdmcp
+    core/libxt
+    core/libice
+    core/libsm
+    core/libxext
+    core/libxrender
+    core/libxmu
+    # guskovd/libxpm/3.5.4.2/20180217171952
+)
+pkg_build_deps=(
+    core/rust-nightly
+    core/gcc
+    core/make
+    core/autoconf
+    core/automake
+    core/gzip
+    core/texinfo
+    core/glibc
+    core/zlib
+    core/gmp
+    core/pkg-config
+    core/xproto
+    core/kbproto
+    core/libpthread-stubs
+    core/renderproto
+)
+pkg_bin_dirs=(bin)
+pkg_lib_dirs=(lib)
+
+_install_dependency() {
+    local dep="${1}"
+    if [[ -z "${NO_INSTALL_DEPS:-}" ]]; then
+	$HAB_BIN pkg path "$dep" || $HAB_BIN install -u $HAB_BLDR_URL --channel $HAB_BLDR_CHANNEL "$dep" || {
+		if [[ "$HAB_BLDR_CHANNEL" != "$FALLBACK_CHANNEL" ]]; then
+		    build_line "Trying to install '$dep' from '$FALLBACK_CHANNEL'"
+		    $HAB_BIN install -u $HAB_BLDR_URL --channel "$FALLBACK_CHANNEL" "$dep" || true
+		fi
+	    }
+    fi
+    return 0
+}
+
+do_prepare() {
+    if [[ ! -r /bin/pwd ]]; then
+	ln -sv "$(pkg_path_for coreutils)/bin/pwd" /bin/pwd
+	_clean_pwd=true
+    fi
+}
+
+do_clean() {
+    # Prevent rm -rf "$CACHE_PATH"
+    return 0
+}
+
+do_build() {
+    ./autogen.sh
+    ./configure --with-gnutls=no --with-xft --with-modules --with-x-toolkit=gtk2 --with-gconf --without-gsettings --without-makeinfo --prefix="$pkg_prefix" --with-xpm=no
+    make
+}
+
+do_install() {
+    make install
+}
+
+do_end() {
+    # Clean up the `pwd` link, if we set it up.
+    if [[ -n "$_clean_pwd" ]]; then
+	rm -fv /bin/pwd
+    fi
+}

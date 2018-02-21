@@ -1,9 +1,9 @@
-# Habitat package: emacs
+# Habitat package: remacs
 
 ## Description
 
-Provide a brief description of the `emacs` plan / purpose.
+Provide a brief description of the `remacs` plan / purpose.
 
 ## Usage
 
-Describe the general usage for the `emacs` plan
+Describe the general usage for the `remacs` plan
