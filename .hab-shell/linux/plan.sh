@@ -1,9 +1,9 @@
 pkg_name=guskovd-plans
 pkg_origin=guskovd
 pkg_version='1.12'
-pkg_description="GSF Hab-Shell Plan"
-pkg_maintainer='QAGO Maintainers'
-pkg_upstream_url="https://gitlab.corp.mail.ru/goqa/gsf"
+pkg_description="guskovd habitat plans"
+pkg_maintainer='guskovd'
+pkg_upstream_url="https://github.com/guskovd/habitat-plans"
 
 pkg_hab_shell_interpreter="bash"
 
