@@ -1,4 +1,4 @@
-pkg_name=emacs-26-git
+pkg_name=emacs
 pkg_origin=guskovd
 pkg_version="4bb2741b7e28c0899af272f85a17e4f4399646de"
 pkg_maintainer="Danil Guskov <guskovd86@mail.ru>"
