@@ -1,17 +1,16 @@
-pkg_name=python2-xlib
+pkg_name=python2-setuptools
 pkg_distname=${pkg_name}
-pkg_version=0.23
+pkg_version=39.2.0
 pkg_origin=guskovd
 pkg_license=('Apache-2.0')
 pkg_maintainer="Danil Guskov <guskovd86@mail.ru>"
 pkg_license=("Apache-2.0")
-pkg_upstream_url=http://github.com/python-xlib/python-xlib
-pkg_dirname=python-xlib-${pkg_version}
-pkg_source=https://files.pythonhosted.org/packages/a6/16/921856f28afc5de6886e4297f2bb29088b5ada16b72dac595b143a740380/python-xlib-${pkg_version}.tar.bz2
-pkg_shasum=c3deb8329038620d07b21be05673fa5a495dd8b04a2d9f4dca37a3811d192ae4
+pkg_upstream_url=http://github.com/pypa/setuptools
+pkg_dirname=setuptools-${pkg_version}
+pkg_source=https://files.pythonhosted.org/packages/1a/04/d6f1159feaccdfc508517dba1929eb93a2854de729fa68da9d5c6b48fa00/setuptools-${pkg_version}.zip
+pkg_shasum=f7cddbb5f5c640311eb00eab6e849f7701fa70bf6a183fc8a2c33dd1d1672fb2
 pkg_deps=(
     core/python2
-    guskovd/python2-setuptools
 )
 
 pkg_env_sep=(
