@@ -40,7 +40,6 @@ pkg_deps=(
     guskovd/libxpm
 )
 pkg_build_deps=(
-    core/rust-nightly
     core/gcc
     core/make
     core/autoconf
