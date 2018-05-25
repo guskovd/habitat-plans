@@ -4,7 +4,7 @@ pkg_version="24.5"
 pkg_maintainer="Danil Guskov <guskovd86@mail.ru>"
 pkg_license=("Apache-2.0")
 pkg_source="ftp://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.xz"
-pkg_shasum=""
+pkg_shasum="dd47d71dd2a526cf6b47cb49af793ec2e26af69a0951cc40e43ae290eacfc34e"
 pkg_deps=(
     core/gtk2
     core/gcc-libs
@@ -37,7 +37,7 @@ pkg_deps=(
     core/libxext
     core/libxrender
     core/libxmu
-    # guskovd/libxpm/3.5.4.2/20180217171952
+    guskovd/libxpm
 )
 pkg_build_deps=(
     core/rust-nightly
@@ -86,7 +86,7 @@ do_clean() {
 
 do_build() {
     ./autogen.sh
-    ./configure --with-gnutls=no --with-xft --with-modules --with-x-toolkit=gtk2 --with-gconf --without-gsettings --without-makeinfo --prefix="$pkg_prefix" --with-xpm=no
+    ./configure --with-gnutls=no --with-xft --with-modules --with-x-toolkit=gtk2 --with-gconf --without-gsettings --without-makeinfo --prefix="$pkg_prefix"
     make
 }
 
