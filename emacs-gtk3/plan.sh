@@ -1,12 +1,11 @@
-pkg_name=emacs
+pkg_name=emacs-gtk3
 pkg_origin=guskovd
-pkg_version="24.5"
 pkg_maintainer="Danil Guskov <guskovd86@mail.ru>"
 pkg_license=("Apache-2.0")
-pkg_source="ftp://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.xz"
-pkg_shasum="dd47d71dd2a526cf6b47cb49af793ec2e26af69a0951cc40e43ae290eacfc34e"
+pkg_source="ftp://ftp.gnu.org/gnu/${pkg_name}/emacs-${pkg_version}.tar.xz"
+pkg_dirname=emacs-${pkg_version}
 pkg_deps=(
-    core/gtk2
+    core/gtk
     core/gcc-libs
     core/ncurses
     core/zlib
@@ -38,6 +37,15 @@ pkg_deps=(
     core/libxrender
     core/libxmu
     guskovd/libxpm
+    core/xextproto
+    core/libxi
+    core/inputproto
+    core/libxfixes
+    core/fixesproto
+    core/libepoxy
+    core/dbus
+    core/at-spi2-core
+    core/at-spi2-atk
 )
 pkg_build_deps=(
     core/gcc
@@ -85,7 +93,7 @@ do_clean() {
 
 do_build() {
     ./autogen.sh
-    ./configure --with-gnutls=no --with-xft --with-modules --with-x-toolkit=gtk2 --with-gconf --without-gsettings --without-makeinfo --prefix="$pkg_prefix"
+    ./configure --with-xft --with-modules --with-x-toolkit=gtk3 --with-gconf --without-gsettings --without-makeinfo --prefix="$pkg_prefix"
     make
 }
 

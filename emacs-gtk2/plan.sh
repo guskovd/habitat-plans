@@ -1,10 +1,11 @@
-pkg_name=emacs
+pkg_name=emacs-gtk2
 pkg_origin=guskovd
-pkg_version="4bb2741b7e28c0899af272f85a17e4f4399646de"
+# pkg_version="24.5"
 pkg_maintainer="Danil Guskov <guskovd86@mail.ru>"
 pkg_license=("Apache-2.0")
-pkg_source="https://github.com/emacs-mirror/emacs/archive/$pkg_version.tar.gz"
-pkg_shasum="71ef235c5b1b7773e47ca436dfb7472536007716020ebc3830e0ff88adab8a20"
+pkg_source="ftp://ftp.gnu.org/gnu/emacs/emacs-${pkg_version}.tar.xz"
+# pkg_shasum="dd47d71dd2a526cf6b47cb49af793ec2e26af69a0951cc40e43ae290eacfc34e"
+pkg_dirname=emacs-${pkg_version}
 pkg_deps=(
     core/gtk2
     core/gcc-libs
@@ -37,6 +38,7 @@ pkg_deps=(
     core/libxext
     core/libxrender
     core/libxmu
+    guskovd/libxpm
 )
 pkg_build_deps=(
     core/gcc
@@ -83,10 +85,8 @@ do_clean() {
 }
 
 do_build() {
-    cd $HAB_CACHE_SRC_PATH/
-    cd emacs-$pkg_version
     ./autogen.sh
-    ./configure --with-gnutls=no --with-xft --with-modules --with-x-toolkit=gtk2 --with-gconf --without-gsettings --without-makeinfo --prefix="$pkg_prefix" --with-xpm=no
+    ./configure --with-xft --with-modules --with-x-toolkit=gtk2 --with-gconf --without-gsettings --without-makeinfo --prefix="$pkg_prefix"
     make
 }
 
