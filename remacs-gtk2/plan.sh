@@ -1,10 +1,10 @@
 pkg_name=remacs
 pkg_origin=guskovd
-pkg_version="fb1107c85d9fbd2fd7e3a08ed6d9e1ce34b2c53e"
+pkg_version="0f752cb2262747ca40c881c806ca0d70cdd0427d"
 pkg_maintainer="Danil Guskov <guskovd86@mail.ru>"
 pkg_license=("Apache-2.0")
 pkg_source="https://github.com/Wilfred/remacs/archive/$pkg_version.tar.gz"
-pkg_shasum="74ab98af4518a9e1df7f20e7924e3dd8b2994d8154edcfff46bf2e9adb8a1e0d"
+pkg_shasum="a01d60f1ea29de044cbe1c07234419681870f564b17fead68ba841be33068e07"
 pkg_deps=(
     core/gtk2
     core/gcc-libs
