@@ -38,6 +38,7 @@ pkg_deps=(
     core/libxext
     core/libxrender
     core/libxmu
+    core/gnutls
     guskovd/libxpm
 )
 pkg_build_deps=(
