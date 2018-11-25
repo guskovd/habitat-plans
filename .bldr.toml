@@ -1,2 +1,3 @@
 [gitbook-cli]
 plan_path = "habitat/plans/gibook-cli"
+paths = [ "habitat/plans/gibook-cli" ]
