@@ -54,3 +54,4 @@ do_build() {
 do_check() {
     make check
 }
+
