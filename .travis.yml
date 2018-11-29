@@ -4,4 +4,5 @@ os:
 language: shell
 
 script:
-  - bash ./travis/build.sh
+  - choco install habitat
+  - hab studio build habitat/selenoid-bin
