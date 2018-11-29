@@ -4,5 +4,6 @@ os:
 language: shell
 
 script:
-  - echo hello
+  - choco install habitat
+  - hab studio build habitat/selenoid-bin
   
