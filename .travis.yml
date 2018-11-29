@@ -4,4 +4,4 @@ os:
 language: shell
 
 script:
-  - ./travis/build.sh
+  - bash ./travis/build.sh
