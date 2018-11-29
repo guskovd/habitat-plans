@@ -1,6 +1,8 @@
 os:
   - windows
 
+language: generic
+
 script:
   - echo hello
   
