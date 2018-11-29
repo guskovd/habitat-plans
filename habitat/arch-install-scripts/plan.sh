@@ -20,7 +20,6 @@ pkg_deps=(
 pkg_bin_dirs=(bin)
 
 do_install() {
-    echo hello
     make
 }
 
