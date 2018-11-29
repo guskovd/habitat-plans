@@ -1,10 +1,7 @@
 os:
   - windows
 
-language: rust
-rust:
-  - stable
-
+language: generic
 
 script:
   - echo hello
