@@ -11,5 +11,6 @@ tar xvf .hab.tar
 # systeminfo
 # cp -rf .hab /c/
 
+
 choco install habitat
 hab studio build habitat/selenoid-bin
