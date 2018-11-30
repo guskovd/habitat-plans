@@ -2,19 +2,18 @@ language: shell
 
 matrix:
   include:
-  - name: "selenoid-bin"
+  - name: "selenoid-bin-windows"
     env: HAB_PKG=selenoid-bin
-    os:
-      - windows
-      - linux
+    os: windows
+  - name: "selenoid-bin-linux"
+    env: HAB_PKG=selenoid-bin
+    os: linux
   - name: "arch-install-scripts"
     env: HAB_PKG=arch-install-scripts
-    os:
-      - linux
+    os: linux
   - name: "gitbook-cli"
     env: HAB_PKG=gitbook-cli
-    os:
-      - linux
+    os: linux
 
 script:
   - bash ./travis/build.sh
