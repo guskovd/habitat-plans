@@ -18,7 +18,7 @@ do_before() {
 update_pkg_version() {
     pkg_version=$(get_latest_release "aerokube/selenoid")
     echo hello
-    echo $pkg_version
+    curl "https://api.github.com/repos/aerokube/selenoid/releases/latest"
     echo hello
     pkg_source=https://github.com/aerokube/selenoid/releases/download/${pkg_version}/selenoid_linux_amd64
     pkg_prefix=$HAB_PKG_PATH/${pkg_origin}/${pkg_name}/${pkg_version}/${pkg_release}
