@@ -3,12 +3,15 @@
 
 export HAB_ORIGIN="guskovd"
 
-uname -s
+if [[ $(uname -s) == "Linux" ]]; then
+    cp -rf .hab /hab
+    curl https://raw.githubusercontent.com/habitat-sh/habitat/master/components/hab/install.sh | sudo bash
+else
+    cp -rf .hab /c/hab
+    choco install habitat
+fi
 
-# cp -rf .hab /c/hab
-
-# choco install habitat
-# hab studio build habitat/${HAB_PKG}
+hab studio build habitat/${HAB_PKG}
 
 # pkg_artifact=$(cat habitat/${HAB_PKG}/results/last_build* | grep pkg_artifact | awk -F '=' '{print $2}' | sed $'s/[\r:\"]//g')
 # pkg_ident=$(cat habitat/${HAB_PKG}/results/last_build.* | grep pkg_ident | awk -F '=' '{print $2}' | sed $'s/[\r:\"]//g')
