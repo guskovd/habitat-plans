@@ -1,10 +1,10 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 # -*- coding: utf-8 -*-
 
 export HAB_ORIGIN="guskovd"
 
-if [[ $(uname -s) == "Linux" ]]; then
-    cp -rf .hab /hab
+if [[ "$(uname -s)" == "Linux" ]]; then
+    cp -rf .hab $HOME/.hab
     curl https://raw.githubusercontent.com/habitat-sh/habitat/master/components/hab/install.sh | sudo bash
 else
     cp -rf .hab /c/hab
