@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # -*- coding: utf-8 -*-
 
+set -e
+
 export HAB_ORIGIN="guskovd"
 
 if [[ "$(uname -s)" == "Linux" ]]; then # Linux setup
