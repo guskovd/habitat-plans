@@ -3,7 +3,7 @@
 
 export HAB_ORIGIN="guskovd"
 
-uname -r
+uname -s
 
 # cp -rf .hab /c/hab
 
