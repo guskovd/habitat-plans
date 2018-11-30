@@ -6,6 +6,7 @@ matrix:
     env: HAB_PKG=selenoid-bin
     os:
       - windows
+      - linux
   - name: "arch-install-scripts"
     env: HAB_PKG=arch-install-scripts
     os:
