@@ -3,5 +3,12 @@ os:
 
 language: shell
 
+matrix:
+  include:
+  - name: "arch-install-scripts"
+    env: HAB_PKG=arch-install-scripts
+  - name: "gitbook-cli"
+    env: HAB_PKG=gitbook-cli
+
 script:
   - ./travis/build.sh
