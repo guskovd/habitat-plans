@@ -3,7 +3,7 @@ language: shell
 matrix:
   include:
   - name: "selenoid-bin"
-    env: HAB_PKG=arch-install-scripts
+    env: HAB_PKG=selenoid-bin
     os:
       - windows
   - name: "arch-install-scripts"

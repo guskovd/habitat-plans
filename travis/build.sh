@@ -3,12 +3,14 @@
 
 export HAB_ORIGIN="guskovd"
 
-cp -rf .hab /c/hab
+uname -r
 
-choco install habitat
-hab studio build habitat/${HAB_PKG}
+# cp -rf .hab /c/hab
 
-pkg_artifact=$(cat habitat/${HAB_PKG}/results/last_build* | grep pkg_artifact | awk -F '=' '{print $2}' | sed $'s/[\r:\"]//g')
-pkg_ident=$(cat habitat/${HAB_PKG}/results/last_build.* | grep pkg_ident | awk -F '=' '{print $2}' | sed $'s/[\r:\"]//g')
+# choco install habitat
+# hab studio build habitat/${HAB_PKG}
 
-hab pkg upload habitat/${HAB_PKG}/results/$pkg_artifact
+# pkg_artifact=$(cat habitat/${HAB_PKG}/results/last_build* | grep pkg_artifact | awk -F '=' '{print $2}' | sed $'s/[\r:\"]//g')
+# pkg_ident=$(cat habitat/${HAB_PKG}/results/last_build.* | grep pkg_ident | awk -F '=' '{print $2}' | sed $'s/[\r:\"]//g')
+
+# hab pkg upload habitat/${HAB_PKG}/results/$pkg_artifact
