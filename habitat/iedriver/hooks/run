@@ -1,0 +1,7 @@
+# -*- mode: powershell -*-
+
+$task="iedriver_task"
+
+. {{pkg.path}}\lib\syncTaskRunner.ps1
+
+SyncTaskRun $task

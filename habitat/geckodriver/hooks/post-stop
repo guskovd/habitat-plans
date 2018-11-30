@@ -1,0 +1,5 @@
+# -*- mode: powershell -*-
+
+$task="geckodriver_task"
+
+c:/Windows/system32/schtasks.exe /End /TN $task

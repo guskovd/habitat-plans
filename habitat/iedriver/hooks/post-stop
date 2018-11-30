@@ -1,0 +1,5 @@
+# -*- mode: powershell -*-
+
+$task="iedriver_task"
+
+c:/Windows/system32/schtasks.exe /End /TN $task
