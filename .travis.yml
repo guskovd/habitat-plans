@@ -16,4 +16,4 @@ matrix:
       - linux
 
 script:
-  - ./travis/build.sh
+  - bash ./travis/build.sh
