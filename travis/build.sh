@@ -3,12 +3,12 @@
 
 export HAB_ORIGIN="guskovd"
 
-if [[ "$(uname -s)" == "Linux" ]]; then
+if [[ "$(uname -s)" == "Linux" ]]; then # Linux setup
     cp -rf .hab $HOME/.hab
     curl https://raw.githubusercontent.com/habitat-sh/habitat/master/components/hab/install.sh | sudo bash
     results=results
-    last_build=results/last_build.sh
-else
+    last_build=results/last_build.env
+else # Windows setup
     cp -rf .hab /c/hab
     choco install habitat
     results=habitat/${HAB_PKG}/results
