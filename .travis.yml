@@ -2,10 +2,14 @@ language: shell
 
 matrix:
   include:
-  - name: "arch-install-scripts"
+  - name: "selenoid-bin"
     env: HAB_PKG=arch-install-scripts
     os:
       - windows
+  - name: "arch-install-scripts"
+    env: HAB_PKG=arch-install-scripts
+    os:
+      - linux
   - name: "gitbook-cli"
     env: HAB_PKG=gitbook-cli
     os:
