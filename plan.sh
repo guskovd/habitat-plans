@@ -1,6 +1,6 @@
 pkg_name=guskovd-plans
 pkg_origin=guskovd
-pkg_version='1.15'
+pkg_version='1.16'
 pkg_description="guskovd habitat plans"
 pkg_maintainer='guskovd'
 pkg_upstream_url="https://github.com/guskovd/habitat-plans"
@@ -22,6 +22,7 @@ pkg_deps=(
     core/git
     core/ruby/$RUBY_VERSION
     core/tar
+    core/docker
 )
 
 do_shell() {
