@@ -1,6 +1,6 @@
 pkg_name=guskovd-plans
 pkg_origin=guskovd
-pkg_version='1.19'
+pkg_version='1.20'
 pkg_description="guskovd habitat plans"
 pkg_maintainer='guskovd'
 pkg_upstream_url="https://github.com/guskovd/habitat-plans"
@@ -25,6 +25,7 @@ pkg_deps=(
     core/docker
     core/sshpass
     core/rsync
+    guskovd/python-openstackclient
 )
 
 do_shell() {
