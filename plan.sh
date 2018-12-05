@@ -41,6 +41,7 @@ do_shell() {
     bundle install --binstubs > /dev/null
     popd > /dev/null
 
+    export PATH="$( builtin cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/.hab-shell/bin:$PATH"
     export PATH="$( builtin cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/bin:$PATH"
 }
 

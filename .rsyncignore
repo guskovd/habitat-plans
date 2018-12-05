@@ -1,0 +1,13 @@
+*.rpm
+*.pyc
+__pycache__
+.kitchen
+.gitshelf
+.kitchen.local.yml
+.DS_Store
+.pytest_cache
+/bin
+.bundle
+.tox
+images
+.git
