@@ -4,7 +4,7 @@ shell_type: bash
 provisioner:
   name: shell
   data_path: ./provision
-  command: ./provision/init.sh
+  command: C:/Users/ADMINI~1/AppData/Local/Temp/kitchen/data/init.sh
 
 driver:
   image: alpine
@@ -26,7 +26,7 @@ platforms:
     provisioner:
       root_path: "C:/Users/Administrator/AppData/Local/Temp/kitchen"
     transport:
-      name: ssh
+      name: rsync_ssh
       username: Administrator
       password: setup
     driver_config:

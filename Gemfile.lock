@@ -6,6 +6,13 @@ GIT
     kitchen-docker (2.7.1.pre)
       test-kitchen (>= 1.0.0)
 
+GIT
+  remote: https://github.com/guskovd/kitchen-transport-rsync-ssh.git
+  revision: 853ca715fb0571602780e62773cd652060abaa6d
+  specs:
+    kitchen-transport-rsync-ssh (0.0.2)
+      test-kitchen
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -118,6 +125,7 @@ DEPENDENCIES
   kitchen-docker!
   kitchen-docker_cli
   kitchen-provisioner-local_shell
+  kitchen-transport-rsync-ssh!
   pry
   rake
   test-kitchen
