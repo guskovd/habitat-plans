@@ -6,11 +6,13 @@ set -e
 export HAB_ORIGIN="guskovd"
 
 if [[ "$(uname -s)" == "Linux" ]]; then # Linux setup
+    echo "export GITHUB_TOKEN=$GITHUB_TOKEN" > habitat/tmp/env.sh
     cp -rf .hab $HOME/.hab
     curl https://raw.githubusercontent.com/habitat-sh/habitat/master/components/hab/install.sh | sudo bash
     results=results
     last_build=results/last_build.env
 else # Windows setup
+    echo "\$env:GITHUB_TOKEN=\"$GITHUB_TOKEN\"" > habitat/tmp/env.ps1
     cp -rf .hab /c/hab
     choco install habitat
     results=habitat/${HAB_PKG}/results
