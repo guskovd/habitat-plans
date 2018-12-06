@@ -1,10 +1,10 @@
 $pkg_name="pstools"
-$pkg_origin="qago"
+$pkg_origin="guskovd"
 $pkg_version="1.0.0"
 $pkg_license=@("LGPL")
 $pkg_upstream_url="https://download.sysinternals.com"
 $pkg_description="pstools"
-$pkg_maintainer="QAGO Maintainers"
+$pkg_maintainer="Danil Guskov"
 $pkg_source="https://download.sysinternals.com/files/PSTools.zip"
 $pkg_shasum="91c36d9794f031f9756c4b2c2dbfd315c83e05be13fd3932cba878794b4e828e"
 $pkg_filename="PSTools.zip"

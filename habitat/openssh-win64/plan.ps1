@@ -1,10 +1,10 @@
 $pkg_name="openssh-win64"
-$pkg_origin="qago"
+$pkg_origin="guskovd"
 $pkg_version="0.0.24.0"
 $pkg_license=@("LGPL")
 $pkg_upstream_url="https://github.com/PowerShell/Win32-OpenSSH"
 $pkg_description="openssh-win64"
-$pkg_maintainer="QAGO Maintainers"
+$pkg_maintainer="Danil Guskov"
 $pkg_source="https://github.com/PowerShell/Win32-OpenSSH/releases/download/0.0.24.0/OpenSSH-Win64.zip"
 $pkg_shasum="b25648e6765e979929a9888b482f736776014dad252d4dee43f990683d70f9e3"
 $pkg_filename="OpenSSH-Win64.zip"

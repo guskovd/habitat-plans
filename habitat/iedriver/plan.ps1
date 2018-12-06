@@ -1,10 +1,10 @@
 $pkg_name="iedriver"
-$pkg_origin="qago"
+$pkg_origin="guskovd"
 $pkg_version="x64_3.14.0"
 $pkg_license=@("LGPL")
 $pkg_upstream_url="http://www.seleniumhq.org"
 $pkg_description="iedriver"
-$pkg_maintainer="QAGO Maintainers"
+$pkg_maintainer="Danil Guskov"
 $pkg_source="http://selenium-release.storage.googleapis.com/3.14/IEDriverServer_$pkg_version.zip"
 $pkg_shasum="5e94943c2d31a285217ac8793e970339c0f87e4bbbc757f55aa293643741aed3"
 $pkg_filename="IEDriverServer_x64_$pkg_version.0.zip"

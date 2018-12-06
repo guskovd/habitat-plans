@@ -1,10 +1,10 @@
 $pkg_name="python"
-$pkg_origin="qago"
+$pkg_origin="guskovd"
 $pkg_version="3.4.4"
 $pkg_license=@("LGPL")
 $pkg_upstream_url="https://www.python.org/downloads/windows/"
 $pkg_description="python2"
-$pkg_maintainer="QAGO Maintainers"
+$pkg_maintainer="Danil Guskov"
 $pkg_source="https://www.python.org/ftp/python/3.4.4/python-3.4.4.amd64.msi"
 $pkg_shasum="ace645d104bddd4f4ffbf453bedddaf2496e3609af3fa47173680d2f321d3709"
 $pkg_filename="python-3.4.4.amd64.msi"

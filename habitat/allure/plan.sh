@@ -1,7 +1,7 @@
 pkg_name=allure
-pkg_origin=qago
+pkg_origin=guskovd
 pkg_version=2.6.0
-pkg_maintainer=""
+pkg_maintainer="Danil Guskov"
 pkg_description="The next generation of Allure Report, a flexible lightweight multi-language test report tool with the possibility to add steps, attachments, parameters and so on."
 pkg_license=('Apache License 2.0')
 pkg_upstream_url="https://github.com/allure-framework/allure2"

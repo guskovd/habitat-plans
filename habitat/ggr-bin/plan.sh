@@ -1,8 +1,8 @@
 pkg_name=ggr-bin
-pkg_origin=qago
+pkg_origin=guskovd
 pkg_version='1.3.1'
 pkg_description="Selenoid grid router binary"
-pkg_maintainer='QAGO Maintainers'
+pkg_maintainer='Danil Guskov'
 pkg_license=('LGPL-2.1')
 pkg_upstream_url="https://github.com/aerokube/ggr"
 pkg_source=https://github.com/aerokube/ggr/releases/download/${pkg_version}/ggr_linux_amd64

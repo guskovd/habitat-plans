@@ -1,10 +1,10 @@
 $pkg_name="firefox"
-$pkg_origin="qago"
+$pkg_origin="guskovd"
 $pkg_version="62.0.3"
 $pkg_license=@("LGPL")
 $pkg_upstream_url="https://www.mozilla.org"
 $pkg_description="firefox"
-$pkg_maintainer="QAGO Maintainers"
+$pkg_maintainer="Danil Guskov"
 $pkg_source="http://download.mozilla.org/?product=firefox-$pkg_version&os=win&lang=en-US"
 $pkg_shasum="8e92223b4fa4938e6e4e77034eb75648ae8a30d034e2c5a6df3466e9352217e5"
 $pkg_filename="firefox_setup.exe"

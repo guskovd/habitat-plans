@@ -1,10 +1,10 @@
 $pkg_name="python2"
-$pkg_origin="qago"
+$pkg_origin="guskovd"
 $pkg_version="2.7.14"
 $pkg_license=@("LGPL")
 $pkg_upstream_url="https://www.python.org/downloads/windows/"
 $pkg_description="python2"
-$pkg_maintainer="QAGO Maintainers"
+$pkg_maintainer="Danil Guskov"
 $pkg_source="https://www.python.org/ftp/python/2.7.14/python-2.7.14.amd64.msi"
 $pkg_shasum="af293df7728b861648162ba0cd4a067299385cb6a3f172569205ac0b33190693"
 $pkg_filename="python-2.7.14.amd64.msi"

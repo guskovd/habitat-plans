@@ -1,10 +1,10 @@
 $pkg_name="cmdow"
-$pkg_origin="qago"
+$pkg_origin="guskovd"
 $pkg_version="1.4.8"
 $pkg_license=@("LGPL")
 $pkg_upstream_url="https://ritchielawrence.github.io/cmdow/"
 $pkg_description="cmdow"
-$pkg_maintainer="QAGO Maintainers"
+$pkg_maintainer="Danil Guskov"
 $pkg_source="https://github.com/ritchielawrence/cmdow/archive/v1.4.8.zip"
 $pkg_shasum="f5c5289a6c26aff63dd27af321ba0392ce3f5c2ed0e6bfcd07d8c7952c468ac9"
 $pkg_filename="v1.4.8.zip"

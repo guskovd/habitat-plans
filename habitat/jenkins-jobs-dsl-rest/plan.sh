@@ -1,8 +1,8 @@
-pkg_origin=qago
+pkg_origin=guskovd
 pkg_name=jenkins-job-dsl-rest
 pkg_version=master
 pkg_description="Jenkins Jobs Dsl REST cli"
-pkg_maintainer='QAGO Maintainers'
+pkg_maintainer='Danil Guskov'
 pkg_license=('LGPL-2.1')
 pkg_source=https://github.com/sheehan/job-dsl-rest-example/archive/master.tar.gz 
 pkg_upstream_url=https://github.com/sheehan/job-dsl-rest-example

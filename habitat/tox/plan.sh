@@ -1,9 +1,9 @@
 pkg_name=tox
-pkg_origin=qago
+pkg_origin=guskovd
 pkg_version=3.2.1
 pkg_description="tox automation project"
 pkg_upstream_url="https://tox.readthedocs.io"
-ppkg_maintainer='QAGO Maintainers'
+ppkg_maintainer='Danil Guskov'
 pkg_license=('LGPL-2.1')
 pkg_source="https://files.pythonhosted.org/packages/ad/fe/55b245f4d4b30baafee29fe0f78dcd9eee89e0e222f4b22789f0fb84ae07/tox-3.2.1.tar.gz"
 pkg_shasum=eb61aa5bcce65325538686f09848f04ef679b5cd9b83cc491272099b28739600

@@ -1,10 +1,10 @@
 $pkg_name="nssm"
-$pkg_origin="qago"
+$pkg_origin="guskovd"
 $pkg_version="2.24"
 $pkg_license=@("LGPL")
 $pkg_upstream_url="https://nssm.cc"
 $pkg_description="NSSM - the Non-Sucking Service Manager"
-$pkg_maintainer="QAGO Maintainers"
+$pkg_maintainer="Danil Guskov"
 $pkg_source="https://nssm.cc/release/nssm-$pkg_version.zip"
 $pkg_shasum="727d1e42275c605e0f04aba98095c38a8e1e46def453cdffce42869428aa6743"
 $pkg_filename="nssm-2.24.zip"

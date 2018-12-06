@@ -1,10 +1,10 @@
 $pkg_name="ps2exe"
-$pkg_origin="qago"
+$pkg_origin="guskovd"
 $pkg_version="0.5.0.0"
 $pkg_license=@("LGPL")
 $pkg_upstream_url="https://gallery.technet.microsoft.com/PS2EXE-Convert-PowerShell-9e4e07f1"
 $pkg_description="ps2exe"
-$pkg_maintainer="QAGO Maintainers"
+$pkg_maintainer="Danil Guskov"
 $pkg_source="https://github.com/qago/ps2exe/releases/download/0.5.0.0/ps2exe.exe"
 $pkg_shasum="faa8c510495d1771c96b464541b574bcd4094f79349991eb222d4174a56f6bc3"
 $pkg_filename="ps2exe.exe"

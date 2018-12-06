@@ -1,7 +1,7 @@
 pkg_name=browsermob-proxy
-pkg_origin=qago
+pkg_origin=guskovd
 pkg_version=2.0.0
-pkg_maintainer='QAGO Maintainers'
+pkg_maintainer='Danil Guskov'
 pkg_description="A free utility to help web developers watch and manipulate network traffic from their AJAX applications. "
 pkg_license=('LGPL-2.1')
 pkg_upstream_url="https://github.com/lightbody/browsermob-proxy"

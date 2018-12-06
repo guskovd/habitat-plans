@@ -1,10 +1,10 @@
 $pkg_name="openssh-cygwin-bin"
-$pkg_origin="qago"
+$pkg_origin="guskovd"
 $pkg_version="7.6p1-1"
 $pkg_license=@("LGPL")
 $pkg_upstream_url="http://www.mls-software.com"
 $pkg_description="cmdow"
-$pkg_maintainer="QAGO Maintainers"
+$pkg_maintainer="Danil Guskov"
 $pkg_source="https://www.mls-software.com/files/setupssh-7.6p1-1.exe"
 $pkg_shasum="0f38977b9f270daedea66302f9067e07f75809371090747f0b0ca806dc626c89"
 $pkg_filename="setupssh-7.6p1-1.exe"

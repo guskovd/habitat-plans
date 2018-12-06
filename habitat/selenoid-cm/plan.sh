@@ -1,8 +1,8 @@
 pkg_name=selenoid-cm
-pkg_origin=qago
+pkg_origin=guskovd
 pkg_version='1.3.1'
 pkg_description="Selenoid cm binary"
-pkg_maintainer='QAGO Maintainers'
+pkg_maintainer='Danil Guskov'
 pkg_license=('LGPL-2.1')
 pkg_upstream_url="https://github.com/aerokube/selenoid"
 pkg_source=https://github.com/aerokube/cm/releases/download/${pkg_version}/cm_linux_amd64

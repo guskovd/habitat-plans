@@ -1,10 +1,10 @@
 $pkg_name="google-chrome"
-$pkg_origin="qago"
+$pkg_origin="guskovd"
 $pkg_version="latest"
 $pkg_license=@("LGPL")
 $pkg_upstream_url="http://www.google.com/chrome"
 $pkg_description="Google Chrome web browser"
-$pkg_maintainer="QAGO Maintainers"
+$pkg_maintainer="Danil Guskov"
 $pkg_source="https://dl-ssl.google.com/tag/s/appguid=%7B00000000-0000-0000-0000-000000000000%7D&iid=%7B00000000-0000-0000-0000-000000000000%7D&lang=en&browser=4&usagestats=0&appname=Google%20Chrome&needsadmin=false/dl/chrome/install/googlechromestandaloneenterprise64.msi"
 $pkg_filename="googlechromestandaloneenterprise64.msi"
 $pkg_shasum="3237e524f3a1465c023c0c70c4bbcbe886f6fb90dd129cd544de9d985bc4463a"

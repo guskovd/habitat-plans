@@ -1,5 +1,5 @@
 $pkg_name="vcforpython27-test"
-$pkg_origin="qago"
+$pkg_origin="guskovd"
 $pkg_version="1.0.9"
 # 
 $pkg_hab_shell_interpreter = "pwsh"

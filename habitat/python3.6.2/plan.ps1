@@ -1,10 +1,10 @@
 $pkg_name="python"
-$pkg_origin="qago"
+$pkg_origin="guskovd"
 $pkg_version="3.6.2"
 $pkg_license=@("LGPL")
 $pkg_upstream_url="https://www.python.org/downloads/windows/"
 $pkg_description="python"
-$pkg_maintainer="QAGO Maintainers"
+$pkg_maintainer="Danil Guskov"
 $pkg_source="https://www.python.org/ftp/python/3.6.2/python-3.6.2-embed-amd64.zip"
 $pkg_shasum="a59c12dbf953d3cdedc678a4f9195e87e717f10c8b0a42ed3fb7092bef523528"
 $pkg_filename="python-3.6.2-embed-amd64.zip"

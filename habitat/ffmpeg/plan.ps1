@@ -1,10 +1,10 @@
 $pkg_name="ffmpeg"
-$pkg_origin="qago"
+$pkg_origin="guskovd"
 $pkg_version="20170411-f1d80bc"
 $pkg_license=@("LGPL")
 $pkg_upstream_url="https://www.ffmpeg.org/"
 $pkg_description="ffmpeg"
-$pkg_maintainer="QAGO Maintainers"
+$pkg_maintainer="Danil Guskov"
 $pkg_source="http://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-20170411-f1d80bc-win64-static.zip"
 $pkg_shasum="b8a5dd32c06e6007019015e3dd37a4b32bdb6f3c4cb5c6432c237397f419d6d7"
 $pkg_filename="ffmpeg-20170411-f1d80bc-win64-static.zip"
