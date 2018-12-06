@@ -1,10 +1,10 @@
 $pkg_name="vcforpython27"
-$pkg_origin="qago"
+$pkg_origin="guskovd"
 $pkg_version="1.0"
 $pkg_license=@("LGPL")
 $pkg_upstream_url="https://www.microsoft.com/en-us/download/confirmation.aspx?id=44266"
 $pkg_description="Microsoft Visual C++ Compiler for Python 2.7"
-$pkg_maintainer="QAGO Maintainers"
+$pkg_maintainer="Danil Guskov"
 $pkg_source="https://download.microsoft.com/download/7/9/6/796EF2E4-801B-4FC4-AB28-B59FBF6D907B/VCForPython27.msi"
 $pkg_shasum="070474db76a2e625513a5835df4595df9324d820f9cc97eab2a596dcbc2f5cbf"
 $pkg_filename="VCForPython27.msi"
