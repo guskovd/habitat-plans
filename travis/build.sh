@@ -21,5 +21,13 @@ hab studio build habitat/${HAB_PKG}
 
 pkg_artifact=$(cat $last_build | grep pkg_artifact | awk -F '=' '{print $2}' | sed $'s/[\r:\"]//g')
 pkg_ident=$(cat $last_build | grep pkg_ident | awk -F '=' '{print $2}' | sed $'s/[\r:\"]//g')
+pkg_origin=$(cat $last_build | grep pkg_origin | awk -F '=' '{print $2}' | sed $'s/[\r:\"]//g')
+pkg_version=$(cat $last_build | grep pkg_version | awk -F '=' '{print $2}' | sed $'s/[\r:\"]//g')
+pkg_name=$(cat $last_build | grep pkg_name | awk -F '=' '{print $2}' | sed $'s/[\r:\"]//g')
 
-hab pkg upload $results/$pkg_artifact
+if [[ ! $(hab pkg search $pkg_origin/$pkg_name | grep $pkg_origin/$pkg_name/$pkg_version) ]]; then
+    echo "Uploading artifact ..."
+    hab pkg upload $results/$pkg_artifact
+else
+    echo "Package exist on hab depot. Skip"
+fi
