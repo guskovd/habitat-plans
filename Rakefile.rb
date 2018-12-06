@@ -41,3 +41,12 @@ task :upload, [:name, :pkg] do |_t, args|
     #{sudo? i} hab pkg upload results/$pkg_artifact
   EOH
 end
+
+task :promote, [:name, :pkg] do |_t, args|
+  i = run_kitchen(:name, args.name)
+  i.remote_exec <<-EOH
+     pushd #{plans_path i}/#{args.pkg} > /dev/null
+     pkg_ident=$(cat #{last_build_env i} | grep pkg_ident | awk -F '=' '{print $2}' | sed $'s/[\r:\"]//g') 
+     #{sudo? i} hab pkg promote $pkg_ident stable
+  EOH
+end
