@@ -3,7 +3,7 @@ language: shell
 matrix:
   include:
   - name: "selenoid-bin-windows"
-    env: HAB_PKG=selenoid-bin
+    env: HAB_PKG=selenoid-bin-latest
     os: windows
   - name: "selenoid-bin-linux"
     env: HAB_PKG=selenoid-bin-latest
