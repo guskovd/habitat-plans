@@ -14,6 +14,12 @@ matrix:
   - name: "geckodriver-bin-linux"
     env: HAB_PKG=geckodriver-bin-latest
     os: linux
+  - name: "chromedriver-bin-windows"
+    env: HAB_PKG=chromedriver-bin-latest
+    os: windows
+  - name: "chromedriver-bin-linux"
+    env: HAB_PKG=chromedriver-bin-latest
+    os: linux
   - name: "firefox-windows"
     env: HAB_PKG=firefox-latest
     os: windows
