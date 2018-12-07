@@ -20,15 +20,15 @@ def data_path(instance)
   if instance.transport.send('config')[:username] == 'Administrator'
     'C:/Users/Administrator/AppData/Local/Temp/kitchen/data'
   else
-    '/tmp/kitchen/data/'
+    '/home/kitchen/prog/my-plans'
   end
 end
 
-def last_build_env(instance)
+def last_build_env(instance, pkg)
   if instance.transport.send('config')[:username] == 'Administrator'
-    'results/last_build.ps1'
+    'results/#{pkg}/last_build.ps1'
   else
-    'results/last_build.env'
+    "results/last_build.env"
   end
 end
 
