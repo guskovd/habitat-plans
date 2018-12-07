@@ -30,6 +30,7 @@ pkg_name=$(cat $last_build | grep pkg_name | awk -F '=' '{print $2}' | sed $'s/[
 if [[ ! $(hab pkg search $pkg_origin/$pkg_name | grep $pkg_origin/$pkg_name/$pkg_version) ]]; then
     echo "Uploading artifact ..."
     hab pkg upload $results/$pkg_artifact
+    hab pkg promote $pkg_ident stable
 else
     echo "Package exist on hab depot. Skip"
 fi

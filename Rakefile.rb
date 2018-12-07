@@ -10,7 +10,7 @@ task :build, [:name, :pkg] do |_t, args|
   hostname = i.send('state_file').read[:hostname]
   if i.transport.send('config')[:username] == 'root'
     system <<-EOH
-      docker run --rm --privileged -ti -e HAB_ORIGIN=guskovd -v hab_pkgs:/hab/pkgs -v hab_studios:/hab/studios -v $HOME/prog/my-plans:/src -v $HOME/.hab/cache/keys:/hab/cache/keys -v $HOME/.hab/cache/artifacts:/hab/cache/artifacts -v /var/run/docker.sock:/var/run/docker.sock -w /src dguskov/doha:base hab studio build -R habitat/#{args.pkg}
+      docker run --rm --privileged -ti -e HAB_NOCOLORING=true -e HAB_ORIGIN=guskovd -v hab_pkgs:/hab/pkgs -v hab_studios:/hab/studios -v $HOME/prog/my-plans:/src -v $HOME/.hab/cache/keys:/hab/cache/keys -v $HOME/.hab/cache/artifacts:/hab/cache/artifacts -v /var/run/docker.sock:/var/run/docker.sock -w /src dguskov/doha:base hab studio build -R habitat/#{args.pkg}
     EOH
   elsif i.transport.send('config')[:username] == 'Administrator'
     system "rsync -qrazc ./habitat/ rsync://#{hostname}/#{data_path i}"

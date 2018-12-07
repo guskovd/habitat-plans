@@ -11,6 +11,9 @@ matrix:
   - name: "geckodriver-bin-windows"
     env: HAB_PKG=geckodriver-bin-latest
     os: windows
+  - name: "geckodriver-bin-linux"
+    env: HAB_PKG=geckodriver-bin-latest
+    os: linux
 
 script:
   - bash ./travis/build.sh
