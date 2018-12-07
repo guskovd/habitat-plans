@@ -24,9 +24,17 @@ def data_path(instance)
   end
 end
 
+def results(instance, pkg)
+  if instance.transport.send('config')[:username] == 'Administrator'
+    "habitat/#{pkg}/results"
+  else
+    "results"
+  end
+end
+
 def last_build_env(instance, pkg)
   if instance.transport.send('config')[:username] == 'Administrator'
-    'results/#{pkg}/last_build.ps1'
+    "habitat/#{pkg}/results/last_build.ps1"
   else
     "results/last_build.env"
   end

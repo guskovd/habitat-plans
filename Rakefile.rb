@@ -27,7 +27,7 @@ task :install, [:name, :pkg] do |_t, args|
   i.remote_exec <<-EOH
     pushd #{data_path i} > /dev/null
     pkg_artifact=$(cat #{last_build_env(i, args.pkg)} | grep pkg_artifact | awk -F '=' '{print $2}' | sed $'s/[\r:\"]//g')
-    #{sudo? i} hab pkg install "results/$pkg_artifact"
+    #{sudo? i} hab pkg install "#{results(i, args.pkg)}/$pkg_artifact"
   EOH
 end
 
@@ -36,7 +36,7 @@ task :upload, [:name, :pkg] do |_t, args|
   i.remote_exec <<-EOH
     pushd #{data_path i} > /dev/null
     pkg_artifact=$(cat #{last_build_env(i, args.pkg)} | grep pkg_artifact | awk -F '=' '{print $2}' | sed $'s/[\r:\"]//g')
-    hab pkg upload results/$pkg_artifact
+    hab pkg upload "#{results(i, args.pkg)}/$pkg_artifact"
   EOH
 end
 
