@@ -13,13 +13,22 @@ task :build, [:name, :pkg] do |_t, args|
       docker run --rm --privileged -ti -e HAB_NOCOLORING=true -e HAB_ORIGIN=guskovd -v hab_pkgs:/hab/pkgs -v hab_studios:/hab/studios -v $HOME/prog/my-plans:/src -v $HOME/.hab/cache/keys:/hab/cache/keys -v $HOME/.hab/cache/artifacts:/hab/cache/artifacts -v /var/run/docker.sock:/var/run/docker.sock -w /src dguskov/doha:base hab studio build -R habitat/#{args.pkg}
     EOH
   elsif i.transport.send('config')[:username] == 'Administrator'
-    system "rsync -qrazc ./habitat/ rsync://#{hostname}/#{data_path i}"
+    system "rsync -qrazc ./habitat rsync://#{hostname}/#{data_path i}/"
     i.remote_exec <<-EOH
       export TEMP='C:/cygwin/tmp'
       cd #{data_path i}
       hab studio build -R habitat/#{args.pkg}
     EOH
   end
+end
+
+task :enter, [:name, :pkg] do |_t, args|
+  i = run_kitchen(:name, args.name)
+  i.remote_exec <<-EOH
+    export TEMP='C:/cygwin/tmp'
+    cd #{data_path i}
+    hab studio enter habitat/#{args.pkg}
+  EOH
 end
 
 task :install, [:name, :pkg] do |_t, args|
