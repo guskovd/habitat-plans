@@ -7,9 +7,8 @@ $pkg_description="Google Chrome web browser"
 $pkg_maintainer="Danil Guskov"
 $pkg_source="https://dl-ssl.google.com/tag/s/appguid=%7B00000000-0000-0000-0000-000000000000%7D&iid=%7B00000000-0000-0000-0000-000000000000%7D&lang=en&browser=4&usagestats=0&appname=Google%20Chrome&needsadmin=false/dl/chrome/install/googlechromestandaloneenterprise64.msi"
 $pkg_filename="googlechromestandaloneenterprise64.msi"
-$pkg_shasum="3237e524f3a1465c023c0c70c4bbcbe886f6fb90dd129cd544de9d985bc4463a"
 $pkg_bin_dirs=@("bin")
-$pkg_build_deps = @("qago/strings")
+$pkg_build_deps = @("guskovd/strings")
 
 # cmd /c ... used to prevent this on win2008r2:
 # Start-Process : Unable to load DLL 'api-ms-win-core-job-l2-1-0.dll': The specified module could not be found
@@ -29,4 +28,8 @@ function Invoke-Install {
 function Invoke-End {
     echo 'cleaning up'
     cmd /c "start /wait msiexec /qn /x $HAB_CACHE_SRC_PATH\$pkg_filename"
+}
+
+function Invoke-Verify {
+    return 0
 }

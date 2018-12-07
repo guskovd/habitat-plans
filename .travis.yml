@@ -23,6 +23,9 @@ matrix:
   - name: "firefox-windows"
     env: HAB_PKG=firefox-latest
     os: windows
+  - name: "google-chrome-windows"
+    env: HAB_PKG=google-chrome
+    os: windows
 
 script:
   - bash ./travis/build.sh
