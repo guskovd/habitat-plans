@@ -36,5 +36,5 @@ if [[ ! $search_result ]] || [[ ! $(hab pkg channels $search_result | grep -m1 $
     hab pkg promote $pkg_ident $os_name
     hab pkg promote $pkg_ident stable
 else
-    echo "Package exist on hab depot. Skip"
+    echo "Package $pkg_origin/$pkg_name promoted to $os_version channel exist on hab depot. Skip"
 fi
