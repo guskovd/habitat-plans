@@ -29,8 +29,8 @@ pkg_origin=$(cat $last_build | grep pkg_origin | awk -F '=' '{print $2}' | sed $
 pkg_version=$(cat $last_build | grep pkg_version | awk -F '=' '{print $2}' | sed $'s/[\r:\"]//g')
 pkg_name=$(cat $last_build | grep pkg_name | awk -F '=' '{print $2}' | sed $'s/[\r:\"]//g')
 
-search_result=$(hab pkg search $pkg_origin/$pkg_name | grep $pkg_origin/$pkg_name/$pkg_version)
-if [[ ! $search_result ]] || [[ ! $(hab pkg channels $search_result | grep $os_name) ]]; then
+search_result=$(hab pkg search $pkg_origin/$pkg_name | grep -m1 $pkg_origin/$pkg_name/$pkg_version)
+if [[ ! $search_result ]] || [[ ! $(hab pkg channels $search_result | grep -m1 $os_name) ]]; then
     echo "Uploading artifact ..."
     hab pkg upload $results/$pkg_artifact
     hab pkg promote $pkg_ident $os_name
