@@ -36,5 +36,5 @@ if [[ ! $search_result ]] || [[ ! $(echo $search_result | xargs -n 1 hab pkg cha
     hab pkg promote $pkg_ident $os_name
     hab pkg promote $pkg_ident stable
 else
-    echo "Package $pkg_origin/$pkg_name promoted to $os_version channel exist on hab depot. Skip"
+    echo "Package $pkg_origin/$pkg_name promoted to $os_name channel exist on hab depot. Skip"
 fi
