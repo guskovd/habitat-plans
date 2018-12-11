@@ -1,1 +1,1 @@
-exec start-engine --client-console
+exec sudo -u mauser start-engine --client-console

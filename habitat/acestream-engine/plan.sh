@@ -7,6 +7,7 @@ pkg_license=("Apache-2.0")
 pkg_svc_user="root"
 
 pkg_deps=(
+    core/sudo
     guskovd/acestream-engine-bin
 )
 
