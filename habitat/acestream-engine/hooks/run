@@ -1,1 +1,1 @@
-exec sudo -u mauser start-engine --client-console
+exec sudo -u {{ cfg.user }} hab pkg exec {{pkg.ident}} start-engine --client-console

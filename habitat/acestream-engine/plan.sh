@@ -1,6 +1,6 @@
 pkg_name=acestream-engine
 pkg_origin=guskovd
-pkg_version="3.1.16"
+pkg_version="1.0.1"
 pkg_maintainer="Danil Guskov <guskovd86@mail.ru>"
 pkg_license=("Apache-2.0")
 
@@ -8,6 +8,7 @@ pkg_svc_user="root"
 
 pkg_deps=(
     core/sudo
+    core/hab
     guskovd/acestream-engine-bin
 )
 
