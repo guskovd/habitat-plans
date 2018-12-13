@@ -31,6 +31,17 @@ task :enter, [:name, :pkg] do |_t, args|
   EOH
 end
 
+task :travis, [:name, :pkg] do |_t, args|
+  i = run_kitchen(:name, args.name)
+  hostname = i.send('state_file').read[:hostname]
+  system "rsync -qrazc $PWD/ rsync://#{hostname}/#{data_path i}"
+  i.remote_exec <<-EOH
+    cd #{data_path i}
+    export HAB_PKG=#{args.pkg}
+    ./travis/build.sh
+  EOH
+end
+
 task :install, [:name, :pkg] do |_t, args|
   i = run_kitchen(:name, args.name)
   i.remote_exec <<-EOH
