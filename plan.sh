@@ -25,7 +25,7 @@ pkg_deps=(
     core/docker
     core/sshpass
     core/rsync
-    guskovd/python-openstackclient
+    # guskovd/python-openstackclient
 )
 
 do_shell() {
