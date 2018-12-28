@@ -41,7 +41,7 @@ platforms:
       name: docker
       image: alpine
       build_context: docker
-      dockerfile: <%= ENV['PWD'] %>/docker/windows.dockerfile
+      dockerfile: <%= ENV['PWD'] %>/docker/alpine.dockerfile
       privileged: true
       use_internal_docker_network: true
       run_command:
