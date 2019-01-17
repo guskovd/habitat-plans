@@ -5,18 +5,20 @@ pkg_license=('Apache-2.0')
 pkg_maintainer="Danil Guskov <guskovd86@mail.ru>"
 pkg_license=("Apache-2.0")
 pkg_upstream_url=https://github.com/saltstack/salt
+
 pkg_deps=(
     core/python2
     core/virtualenv
     core/zeromq
-    core/openssl-musl
+    core/openssl
 )
 pkg_build_deps=(
     core/gcc
+    core/patch
+    core/diffutils
 )
 
 pkg_bin_dirs=(bin)
-pkg_lib_dirs=(bin)
 
 do_prepare() {
     virtualenv "$pkg_prefix"
@@ -30,7 +32,8 @@ do_build() {
 do_install() {
     pip install "$pkg_name==$pkg_version"
     pip freeze > "$pkg_prefix/requirements.txt"
-    ln -sf $(pkg_path_for core/openssl-musl)/lib/libcrypto.so.1.0.0 ${pkg_prefix}/lib/libcrypto.so.10
+    pushd $pkg_prefix/lib/python2.7/site-packages/salt/utils
+    patch -p1 < "$PLAN_CONTEXT/rsax931.py.patch"
 }
 
 do_strip() {
@@ -39,5 +42,4 @@ do_strip() {
 
 do_setup_environment() {
     push_runtime_env LD_LIBRARY_PATH "$(pkg_path_for core/openssl)/lib"
-    push_runtime_env LD_LIBRARY_PATH "${pkg_prefix}/lib"
 }
