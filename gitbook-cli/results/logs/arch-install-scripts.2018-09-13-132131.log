@@ -1,0 +1,103 @@
+Script started on Thu Sep 13 13:21:31 2018
+   : Loading /src/plan.sh
+   arch-install-scripts: Plan loaded
+   arch-install-scripts: Validating plan metadata
+   arch-install-scripts: Using HAB_BIN=/hab/pkgs/core/hab/0.62.1/20180905002037/bin/hab for installs, signing, and hashing
+   arch-install-scripts: hab-plan-build setup
+   arch-install-scripts: Writing pre_build file
+   arch-install-scripts: Resolving build dependencies
+[1;33m» Installing core/make[0m
+[1;32m☁ Determining[0m latest version of core/make in the 'stable' channel
+[1;32m→ Using[0m core/make/4.2.1/20180608100733
+[1;34m★ Install of core/make/4.2.1/20180608100733 complete with 0 new packages installed.[0m
+   arch-install-scripts: Resolved build dependency 'core/make' to /hab/pkgs/core/make/4.2.1/20180608100733
+[1;33m» Installing core/m4[0m
+[1;32m☁ Determining[0m latest version of core/m4 in the 'stable' channel
+[1;32m↓ Downloading[0m core/m4/1.4.18/20180608051345
+    1.76 KB / 137.98 KB | [>-----------------------------] 1.28 % 30.89 MB/s 0s     4.46 KB / 137.98 KB / [>-----------------------------] 3.23 % 20.91 MB/s 0s     7.15 KB / 137.98 KB - [=>----------------------------] 5.18 % 23.56 MB/s 0s     9.84 KB / 137.98 KB \ [==>---------------------------] 7.13 % 24.46 MB/s 0s     12.54 KB / 137.98 KB | [==>-------------------------] 9.09 % 225.60 KB/s 1s     15.07 KB / 137.98 KB / [==>------------------------] 10.92 % 269.08 KB/s 0s     17.76 KB / 137.98 KB - [===>-----------------------] 12.87 % 313.36 KB/s 0s     20.46 KB / 137.98 KB \ [====>----------------------] 14.82 % 341.39 KB/s 0s     23.15 KB / 137.98 KB | [====>----------------------] 16.78 % 366.84 KB/s 0s     25.84 KB / 137.98 KB / [=====>---------------------] 18.73 % 387.37 KB/s 0s     28.54 KB / 137.98 KB - [=====>---------------------] 20.68 % 406.71 KB/s 0s     31.07 KB / 137.98 KB \ [======>--------------------] 22.51 % 428.89 KB/s 0s     39.07 KB / 137.98 KB | [=======>-------------------] 28.31 % 184.83 KB/s 1s     47.07 KB / 137.98 KB / [=========>-----------------] 34.11 % 222.63 KB/s 0s     55.07 KB / 137.98 KB - [==========>----------------] 39.91 % 220.46 KB/s 0s     63.07 KB / 137.98 KB \ [============>--------------] 45.71 % 252.43 KB/s 0s     71.07 KB / 137.98 KB | [=============>-------------] 51.50 % 275.97 KB/s 0s     79.07 KB / 137.98 KB / [===============>-----------] 57.30 % 306.98 KB/s 0s     87.07 KB / 137.98 KB - [=================>---------] 63.10 % 271.18 KB/s 0s     95.07 KB / 137.98 KB \ [==================>--------] 68.90 % 296.05 KB/s 0s     103.07 KB / 137.98 KB | [===================>------] 74.70 % 295.53 KB/s 0s     111.07 KB / 137.98 KB / [====================>-----] 80.49 % 318.40 KB/s 0s     119.07 KB / 137.98 KB - [======================>---] 86.29 % 319.44 KB/s 0s     127.07 KB / 137.98 KB \ [=======================>--] 92.09 % 340.83 KB/s 0s     135.07 KB / 137.98 KB | [==========================] 97.89 % 347.77 KB/s 0s     137.98 KB / 137.98 KB / [===========================] 100.00 % 355.24 KB/s  
+[1;32m☛ Verifying[0m core/m4/1.4.18/20180608051345
+[1;32m→ Using[0m core/glibc/2.27/20180608041157
+[1;32m→ Using[0m core/linux-headers/4.15.9/20180608041107
+[1;32m✓ Installed[0m core/m4/1.4.18/20180608051345
+[1;34m★ Install of core/m4/1.4.18/20180608051345 complete with 1 new packages installed.[0m
+   arch-install-scripts: Resolved build dependency 'core/m4' to /hab/pkgs/core/m4/1.4.18/20180608051345
+   arch-install-scripts: Resolving run dependencies
+   arch-install-scripts: Setting up environment
+   arch-install-scripts: Populating runtime environment from dependencies
+   arch-install-scripts: Populating buildtime environment from dependencies
+   arch-install-scripts: Layering runtime environment on top of system environment
+   arch-install-scripts: Layering buildtime environment on top of system environment
+   arch-install-scripts: Setting PATH=/hab/pkgs/qago/arch-install-scripts/19/20180913132131/bin:/hab/pkgs/core/make/4.2.1/20180608100733/bin:/hab/pkgs/core/m4/1.4.18/20180608051345/bin:/hab/pkgs/core/glibc/2.27/20180608041157/bin:/hab/pkgs/core/hab-plan-build/0.62.1/20180905003025/bin:/hab/pkgs/core/bash/4.3.42/20170513213519/bin:/hab/pkgs/core/binutils/2.25.1/20170513201927/bin:/hab/pkgs/core/bzip2/1.0.6/20170513212938/bin:/hab/pkgs/core/coreutils/8.25/20170513213226/bin:/hab/pkgs/core/file/5.24/20170513201915/bin:/hab/pkgs/core/findutils/4.4.2/20170513214305/bin:/hab/pkgs/core/gawk/4.1.3/20170513213646/bin:/hab/pkgs/core/grep/2.22/20170513213444/bin:/hab/pkgs/core/gzip/1.6/20170513214605/bin:/hab/pkgs/core/hab/0.62.1/20180905002037/bin:/hab/pkgs/core/rq/0.9.2/20170612005822/bin:/hab/pkgs/core/sed/4.2.2/20170513213123/bin:/hab/pkgs/core/tar/1.29/20170513213607/bin:/hab/pkgs/core/unzip/6.0/20180310001951/bin:/hab/pkgs/core/wget/1.19.1/20171024102323/bin:/hab/pkgs/core/xz/5.2.2/20170513214327/bin:/hab/pkgs/core/glibc/2.22/20170513201042/bin:/hab/pkgs/core/ncurses/6.0/20170513213009/bin:/hab/pkgs/core/acl/2.2.52/20170513213108/bin:/hab/pkgs/core/attr/2.4.47/20170513213059/bin:/hab/pkgs/core/libcap/2.24/20170513213120/bin:/hab/pkgs/core/pcre/8.38/20170513213423/bin:/hab/pkgs/core/less/481/20170513213936/bin:/hab/pkgs/core/libidn/1.32/20170513215043/bin:/hab/pkgs/core/openssl/1.0.2l/20171014213633/bin
+   arch-install-scripts: Found previous file 'v19.tar.gz', attempting to re-use
+   arch-install-scripts: Verifying v19.tar.gz
+   arch-install-scripts: Checksum verified for v19.tar.gz
+   arch-install-scripts: Using cached and verified 'v19.tar.gz'
+   arch-install-scripts: Verifying v19.tar.gz
+   arch-install-scripts: Checksum verified for v19.tar.gz
+   arch-install-scripts: Clean the cache
+   arch-install-scripts: Unpacking v19.tar.gz
+   arch-install-scripts: Setting build environment
+   arch-install-scripts: Setting PREFIX=/hab/pkgs/qago/arch-install-scripts/19/20180913132131
+   arch-install-scripts: Setting LD_RUN_PATH=
+   arch-install-scripts: Setting CFLAGS=-I/hab/pkgs/core/make/4.2.1/20180608100733/include
+   arch-install-scripts: Setting CXXFLAGS=-I/hab/pkgs/core/make/4.2.1/20180608100733/include
+   arch-install-scripts: Setting CPPFLAGS=-I/hab/pkgs/core/make/4.2.1/20180608100733/include
+   arch-install-scripts: Setting LDFLAGS=
+   arch-install-scripts: Setting PKG_CONFIG_PATH=
+   arch-install-scripts: Preparing to build
+   arch-install-scripts: Building
+/hab/cache/src/arch-install-scripts-19
+total 72K
+drwxrwxr-x 3 root root 4.0K Aug 25 10:57 .
+drwxr-xr-x 4 root root 4.0K Sep 13 13:21 ..
+-rw-rw-r-- 1 root root  18K Aug 25 10:57 COPYING
+-rw-rw-r-- 1 root root  688 Aug 25 10:57 Makefile
+-rw-rw-r-- 1 root root  286 Aug 25 10:57 README.md
+-rw-rw-r-- 1 root root 2.1K Aug 25 10:57 arch-chroot.in
+-rw-rw-r-- 1 root root 5.9K Aug 25 10:57 common
+-rw-rw-r-- 1 root root 6.2K Aug 25 10:57 genfstab.in
+-rw-rw-r-- 1 root root 2.9K Aug 25 10:57 pacstrap.in
+drwxrwxr-x 2 root root 4.0K Aug 25 10:57 test
+-rw-rw-r-- 1 root root 4.4K Aug 25 10:57 zsh-completion
+  GEN      arch-chroot
+  GEN      genfstab
+  GEN      pacstrap
+   arch-install-scripts: Installing
+mkdir: created directory '/hab/pkgs/qago'
+mkdir: created directory '/hab/pkgs/qago/arch-install-scripts'
+mkdir: created directory '/hab/pkgs/qago/arch-install-scripts/19'
+mkdir: created directory '/hab/pkgs/qago/arch-install-scripts/19/20180913132131'
+mkdir: created directory '/hab/pkgs/qago/arch-install-scripts/19/20180913132131/bin'
+make: Nothing to be done for 'all'.
+   arch-install-scripts: Writing configuration
+   arch-install-scripts: Writing service management scripts
+   arch-install-scripts: Stripping unneeded symbols from binaries and libraries
+   arch-install-scripts: Building package metadata
+   arch-install-scripts: Generating blake2b hashes of all files in the package
+   arch-install-scripts: Generating signed metadata FILES
+[1;33m» Signing arch-install-scripts_blake2bsums[0m
+[1;36m☛ Signing[0m arch-install-scripts_blake2bsums with qago-20170616190730 to create /hab/pkgs/qago/arch-install-scripts/19/20180913132131/FILES
+[1;34m★ Signed artifact /hab/pkgs/qago/arch-install-scripts/19/20180913132131/FILES.[0m
+   arch-install-scripts: Creating manifest
+   arch-install-scripts: Generating package artifact
+/hab/pkgs/core/tar/1.29/20170513213607/bin/tar: Removing leading `/' from member names
+/hab/cache/artifacts/.qago-arch-install-scripts-19-20180913132131-x86_64-linux.tar (1/1)
+  100 %           1620 B / 20.0 KiB = 0.079                                    
+[1;33m» Signing /hab/cache/artifacts/.qago-arch-install-scripts-19-20180913132131-x86_64-linux.tar.xz[0m
+[1;36m☛ Signing[0m /hab/cache/artifacts/.qago-arch-install-scripts-19-20180913132131-x86_64-linux.tar.xz with qago-20170616190730 to create /hab/cache/artifacts/qago-arch-install-scripts-19-20180913132131-x86_64-linux.hart
+[1;34m★ Signed artifact /hab/cache/artifacts/qago-arch-install-scripts-19-20180913132131-x86_64-linux.hart.[0m
+'/hab/cache/artifacts/qago-arch-install-scripts-19-20180913132131-x86_64-linux.hart' -> '/src/results/qago-arch-install-scripts-19-20180913132131-x86_64-linux.hart'
+   arch-install-scripts: hab-plan-build cleanup
+   arch-install-scripts: 
+   arch-install-scripts: Source Path: /hab/cache/src/arch-install-scripts-19
+   arch-install-scripts: Installed Path: /hab/pkgs/qago/arch-install-scripts/19/20180913132131
+   arch-install-scripts: Artifact: /src/results/qago-arch-install-scripts-19-20180913132131-x86_64-linux.hart
+   arch-install-scripts: Build Report: /src/results/last_build.env
+   arch-install-scripts: SHA256 Checksum: b959648ed9f0ccf151c7a78996805d81182bf42e625a6f48ea956c23fab67d06
+   arch-install-scripts: Blake2b Checksum: 4fc48b9075c2353af1428937241906acd26309bb4c705f50bb44a8f07043816f
+   arch-install-scripts: 
+   arch-install-scripts: I love it when a plan.sh comes together.
+   arch-install-scripts: 
+   arch-install-scripts: Build time: 0m3s
+
+Script done on Thu Sep 13 13:21:34 2018
