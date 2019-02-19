@@ -14,7 +14,7 @@ pkg_deps=(
     core/libffi
     core/python2
     core/zlib
-    core/ncurses
+    core/ncurses/6.1/20190115012027
     core/libedit
     core/clang
     core/swig
@@ -68,11 +68,15 @@ do_build() {
 
     pushd "${BUILD_DIR}" || exit 1
     cmake \
+	-DLLVM_ENABLE_PROJECTS='clang;lldb' \
+	-DLLVM_TABLEGEN=${pkg_prefix}/bin/llvm-tblgen \
+	-DCMAKE_PREFIX_PATH=$(pkg_path_for ncurses) \
 	-DCMAKE_INSTALL_PREFIX="${pkg_prefix}" \
 	-DCMAKE_BUILD_TYPE=Release \
-	-DLLDB_DISABLE_CURSES:BOOL=TRUE \
 	-DPYTHON_LIBRARY=$(pkg_path_for python2)/lib/libpython2.7.so \
 	-DPYTHON_INCLUDE_DIR=$(pkg_path_for python2)/include \
+	-DCURSES_LIBRARY=$(pkg_path_for ncurses)/lib/libncurses++w.so.6.1 \
+	-DCURSES_INCLUDE_PATH=$(pkg_path_for ncurses)/include \
 	-DLLVM_LINK_LLVM_DYLIB=ON \
 	-Dlibedit_INCLUDE_DIRS=$(pkg_path_for libedit)/include \
 	-Dlibedit_LIBRARIES=$(pkg_path_for libedit)/lib \
