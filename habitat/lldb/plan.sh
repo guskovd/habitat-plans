@@ -1,13 +1,13 @@
 pkg_name=lldb
 pkg_origin=guskovd
-pkg_version=7.0.1
+pkg_version=7.0.0
 pkg_license=('NCSA')
 pkg_description="Next-gen compiler infrastructure"
 pkg_upstream_url="http://llvm.org/"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_filename="${pkg_name}-${pkg_version}.src.tar.xz"
 pkg_source="http://releases.llvm.org/$pkg_version/lldb-$pkg_version.src.tar.xz"
-pkg_shasum="76b46be75b412a3d22f0d26279306ae7e274fe4d7988a2184c529c38a6a76982"
+pkg_shasum="7ff6d8fee49977d25b3b69be7d22937b92592c7609cf283ed0dcf9e5cd80aa32"
 pkg_deps=(
     core/coreutils
     core/gcc-libs
@@ -19,9 +19,8 @@ pkg_deps=(
     core/clang
     core/swig
     core/doxygen
-    guskovd/clang/7.0.1
-    guskovd/clang-tools-extra/7.0.1
-    guskovd/llvm/7.0.1
+    core/clang-tools-extra
+    core/llvm
 )
 pkg_build_deps=(
     core/cmake
@@ -42,26 +41,15 @@ do_setup_environment() {
     set_buildtime_env BUILD_DIR "_build"
 
     # this allows cmake users to utilize `CMAKE_FIND_ROOT_PATH` to find various cmake configs
-    push_runtime_env CMAKE_FIND_ROOT_PATH "${pkg_prefix}/lib/cmake/llvm"
+    push_runtime_env CMAKE_FIND_ROOT_PATH "${pkg_prefix}/lib/cmake/lldb"
 }
 
 do_unpack() {
-    # The tarball's structure has `.src` as part of the base directory.
-    # This reimplements a large portion of the default unpack, only to
-    # add `--strip` to the tar command.
-    # There may be some more awesome way to do this - I don't know that yet.
     build_line "Unpacking $pkg_filename to custom cache dir"
     local source_file="$HAB_CACHE_SRC_PATH/$pkg_filename"
-    # we want to keep the src as some later dependencies require it
     local unpack_dir="${pkg_prefix}/src"
     mkdir -p "$unpack_dir"
     pushd "$unpack_dir" > /dev/null || exit 1
-    # Per tar's help output:
-    #
-    #   --no-same-owner        extract files as yourself (default for ordinary users)
-    #
-    # The llvm package has some files owned by specific UIDs that we
-    # can't be sure exist on the builder or target system.
     tar xf "$source_file" --strip 1 --no-same-owner
     popd > /dev/null || exit 1
 }
@@ -80,35 +68,16 @@ do_build() {
 
     pushd "${BUILD_DIR}" || exit 1
     cmake \
-	-DLLVM_ENABLE_PROJECTS='clang;lldb' \
+	-DCMAKE_INSTALL_PREFIX="${pkg_prefix}" \
 	-DCMAKE_BUILD_TYPE=Release \
-	-DLLDB_DISABLE_LIBEDIT:BOOL=TRUE \
 	-DLLDB_DISABLE_CURSES:BOOL=TRUE \
 	-DPYTHON_LIBRARY=$(pkg_path_for python2)/lib/libpython2.7.so \
 	-DPYTHON_INCLUDE_DIR=$(pkg_path_for python2)/include \
 	-DLLVM_LINK_LLVM_DYLIB=ON \
-	-DLLDB_USE_SYSTEM_SIX=1 \
 	-Dlibedit_INCLUDE_DIRS=$(pkg_path_for libedit)/include \
 	-Dlibedit_LIBRARIES=$(pkg_path_for libedit)/lib \
 	-G "Ninja" \
 	"${pkg_prefix}/src"
-
-	# -DLLDB_DISABLE_CURSES:BOOL=TRUE \
-	# -DPYTHON_LIBRARY=$(pkg_path_for python2)/lib/libpython2.7.so \
-	# -DPYTHON_INCLUDE_DIR=$(pkg_path_for python2)/include \
-	# -Dlibedit_INCLUDE_DIRS=$(pkg_path_for libedit)/include \
-	# -Dlibedit_LIBRARIES=$(pkg_path_for libedit)/lib \
-	# -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
-	# -DCMAKE_INSTALL_PREFIX="${pkg_prefix}" \
-	# -DCMAKE_BUILD_TYPE=Release \
-	# -DLLVM_ENABLE_RTTI=ON \
-	# -DLLVM_ENABLE_FFI=ON \
-	# -DLLVM_INSTALL_UTILS=ON \
-	# -DFFI_INCLUDE_DIR="${_LIBFFI_PATH}/lib/libffi-3.2.1/include" \
-	# -DFFI_LIBRARY_DIR="${_LIBFFI_PATH}/lib" \
-	# -DLLVM_BUILD_TESTS="${DO_CHECK}" \
-	# -G "Ninja" \
-	# "${pkg_prefix}/src"
 
     # ninja defaults to using 8 jobs. on machines with limited resources this becomes
     # problematic causing things not to be built and run.
