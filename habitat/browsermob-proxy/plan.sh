@@ -24,16 +24,3 @@ do_unpack() {
 do_install() {
     cp * $pkg_prefix -rf
 }
-
-# _install_dependency() {
-#     local dep="${1}"
-#     if [[ -z "${NO_INSTALL_DEPS:-}" ]]; then
-# 	$HAB_BIN pkg path "$dep" || $HAB_BIN install -u $HAB_BLDR_URL --channel $HAB_BLDR_CHANNEL "$dep" || {
-# 		if [[ "$HAB_BLDR_CHANNEL" != "$FALLBACK_CHANNEL" ]]; then
-# 		    build_line "Trying to install '$dep' from '$FALLBACK_CHANNEL'"
-# 		    $HAB_BIN install -u $HAB_BLDR_URL --channel "$FALLBACK_CHANNEL" "$dep" || true
-# 		fi
-# 	    }
-#     fi
-#     return 0
-# }
