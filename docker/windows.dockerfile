@@ -11,4 +11,4 @@ ENV QEMU_IMG $qemu_img
 
 ADD entry.sh /entry.sh
 
-CMD docker/entry.sh
+CMD /entry.sh
