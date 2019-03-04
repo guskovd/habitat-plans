@@ -1,10 +1,10 @@
 pkg_name=remacs
 pkg_origin=guskovd
-pkg_version="0207a05ce4aa8e1531a986dc1cd9dcd23181db40"
+pkg_version="950f488504cbf33977e5a3c7bd2852f6177f7bc8"
 pkg_maintainer="Danil Guskov <guskovd86@mail.ru>"
 pkg_license=("Apache-2.0")
 pkg_source="https://github.com/Wilfred/remacs/archive/$pkg_version.tar.gz"
-pkg_shasum="a01d60f1ea29de044cbe1c07234419681870f564b17fead68ba841be33068e07"
+pkg_shasum="62addb3535204f01129d3c976e112eb2b0f0d6173e7762b8e3ce55fe26e531b0"
 pkg_deps=(
     core/gcc-libs
     core/ncurses
@@ -35,11 +35,14 @@ pkg_deps=(
     core/libxext
     core/libxrender
     core/libxmu
-    core/gtk/3.22.22/20180405204505
+    core/gtk
+    core/openssl
 )
 pkg_build_deps=(
+    core/openssl
     core/coreutils
-    core/rust-nightly
+    guskovd/rustup
+    # core/rust-nightly
     core/gcc
     core/make
     core/autoconf
@@ -63,6 +66,7 @@ do_prepare() {
 	ln -sv "$(pkg_path_for coreutils)/bin/pwd" /bin/pwd
 	_clean_pwd=true
     fi
+    rustup-init -y
 }
 
 do_clean() {
