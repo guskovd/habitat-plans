@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# -*- coding: utf-8 -*-
+
+set -e
+
+gradle -p $(hab pkg path qago/jenkins-job-dsl-rest)/lib --project-cache-dir=$PWD/.gradle rest $*
