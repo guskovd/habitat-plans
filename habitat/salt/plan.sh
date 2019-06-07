@@ -1,5 +1,5 @@
 pkg_name=salt
-pkg_version=v2018.3.3
+pkg_version=v2019.2.0
 pkg_origin=guskovd
 pkg_license=('Apache-2.0')
 pkg_maintainer="Danil Guskov <guskovd86@mail.ru>"
