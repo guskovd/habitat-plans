@@ -10,7 +10,7 @@ pkg_bin_dirs=(bin)
 
 do_unpack() {
     mkdir -p "${HAB_CACHE_SRC_PATH}/${pkg_dirname}"
-    tar -xvf cni-plugins-amd64-v0.6.0.tgz -C "${HAB_CACHE_SRC_PATH}/${pkg_dirname}" --no-same-owner
+    tar -xvf ${HAB_CACHE_SRC_PATH}/cni-plugins-amd64-v0.6.0.tgz -C "${HAB_CACHE_SRC_PATH}/${pkg_dirname}"
 }
 
 do_build() {
