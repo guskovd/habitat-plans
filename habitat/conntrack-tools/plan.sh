@@ -9,7 +9,8 @@ pkg_shasum="36c6d99c7684851d4d72e75bd07ff3f0ff1baaf4b6f069eb7244990cd1a9a462"
 pkg_bin_dirs=(sbin)
 
 pkg_deps=(
-    guskovd/libnfnetlink
+    guskovd/libmnl
+    guskovd/libnetfilter_conntrack
 )
 
 pkg_build_deps=(
@@ -19,7 +20,6 @@ pkg_build_deps=(
     core/pkg-config
     core/make
     guskovd/libnfnetlink
-    guskovd/libmnl
     guskovd/libnetfilter_conntrack
     guskovd/libnetfilter_cttimeout
     guskovd/libnetfilter_cthelper
