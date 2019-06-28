@@ -31,7 +31,11 @@ pkg_deps=(
 do_shell() {
     . ~/.bashrc
     unset HAB_CACHE_KEY_PATH
+
+    export HAB_AUTH_TOKEN=_Qk9YLTEKYmxkci0yMDE3MDkyNzAyMzcxNApibGRyLTIwMTcwOTI3MDIzNzE0CkQ3RytwTURLWmZtZnBXKzAwZVlYbndSRnpETWoxRGdaCnBySk5iak9iU2E1dENDM0dTSnh2MDNUb3dSeGVSRFFDYWtlbXduSDRiLzQzOUNKcw
+    export HAB_BLDR_URL=https://bldr.habitat.sh 
     export HAB_ORIGIN="guskovd"
+    
     ruby_bundle_path=$HOME/.hab-shell/ruby/bundle/$RUBY_VERSION
 
     echo "export GITHUB_TOKEN=$GITHUB_TOKEN" > "$( builtin cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/habitat/tmp/env.sh"
