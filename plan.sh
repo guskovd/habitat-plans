@@ -16,7 +16,7 @@ pkg_deps=(
     core/gawk/4.2.0/20180608093856
     core/git/2.18.0/20181218161804
     core/grep/3.1/20180608092809
-    core/hab/0.71.0/20181218014130
+    core/hab/0.79.0/20190409150529
     core/make/4.2.1/20180608100733
     core/rsync/3.1.2/20180608145950
     core/ruby/2.5.1/20181212185250
@@ -25,7 +25,6 @@ pkg_deps=(
     core/sudo/1.8.18p1/20181219210923
     core/tar/1.30/20180608093304
     core/which/2.21/20180608164236
-    # guskovd/python-openstackclient
 )
 
 do_shell() {
