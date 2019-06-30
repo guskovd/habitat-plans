@@ -7,24 +7,25 @@ pkg_upstream_url="https://github.com/guskovd/habitat-plans"
 
 pkg_hab_shell_interpreter="bash"
 
-RUBY_VERSION=2.5.1
+RUBY_VERSION=2.5.5
 
 pkg_deps=(
-    core/bash/4.4.19/20180608092913
-    core/coreutils/8.29/20180608092141
-    core/docker/18.03.0/20180608150948
-    core/gawk/4.2.0/20180608093856
-    core/git/2.18.0/20181218161804
-    core/grep/3.1/20180608092809
+    core/bash/4.4.19/20190115012619
+    core/coreutils/8.30/20190115012313
+    core/docker/18.03.0/20190117151003
+    core/gawk/4.2.1/20190115012752
+    core/git/2.20.1/20190305233956
+    core/grep/3.1/20190115012541
     core/hab/0.79.0/20190409150529
-    core/make/4.2.1/20180608100733
-    core/rsync/3.1.2/20180608145950
-    core/ruby/2.5.1/20181212185250
-    core/sed/4.4/20180608091938
-    core/sshpass/1.06/20180608151129
-    core/sudo/1.8.18p1/20181219210923
-    core/tar/1.30/20180608093304
-    core/which/2.21/20180608164236
+    core/make/4.2.1/20190115013626
+    core/rsync/3.1.2/20190115215406
+    core/ruby/2.5.5/20190416223112
+    core/sed/4.5/20190115012152
+    core/sshpass/1.06/20190115233635
+    core/sudo/1.8.18p1/20190117185055
+    core/tar/1.30/20190115012709
+    core/which/2.21/20190430084037
+    guskovd/vagrant/2.2.4/20190630061004
 )
 
 do_shell() {
