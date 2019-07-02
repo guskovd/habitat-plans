@@ -1,10 +1,10 @@
 pkg_name=remacs
 pkg_origin=guskovd
-pkg_version="950f488504cbf33977e5a3c7bd2852f6177f7bc8"
+pkg_version="fb2e5d73bbd221568e9fbeaa2e6d169a422455de"
 pkg_maintainer="Danil Guskov <guskovd86@mail.ru>"
 pkg_license=("Apache-2.0")
 pkg_source="https://github.com/Wilfred/remacs/archive/$pkg_version.tar.gz"
-pkg_shasum="62addb3535204f01129d3c976e112eb2b0f0d6173e7762b8e3ce55fe26e531b0"
+pkg_shasum="f9af7103de6212f7bf9878a9fcdb3aeb3d6935a5968495c85482623c0b3a67ba"
 pkg_deps=(
     core/gcc-libs
     core/ncurses
@@ -41,8 +41,10 @@ pkg_deps=(
 pkg_build_deps=(
     core/openssl
     core/coreutils
-    guskovd/rustup
-    # core/rust-nightly
+    core/diffutils
+    guskovd/rustup/1.18.3
+    guskovd/rust-nightly
+    core/rust
     core/gcc
     core/make
     core/autoconf
@@ -57,6 +59,17 @@ pkg_build_deps=(
     core/kbproto
     core/libpthread-stubs
     core/renderproto
+    core/xextproto
+    core/libxi
+    core/inputproto
+    core/libxfixes
+    core/fixesproto
+    core/libepoxy
+    core/at-spi2-atk
+    core/at-spi2-core
+    core/dbus
+    core/alsa-lib
+    guskovd/libxpm/3.5.12
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
@@ -66,7 +79,8 @@ do_prepare() {
 	ln -sv "$(pkg_path_for coreutils)/bin/pwd" /bin/pwd
 	_clean_pwd=true
     fi
-    rustup-init -y
+    # rustup-init -y
+    # source $HOME/.cargo/env
 }
 
 do_clean() {
@@ -75,8 +89,9 @@ do_clean() {
 }
 
 do_build() {
-    ./autogen.sh
-    ./configure --with-gnutls=no --with-xft --with-modules --with-x-toolkit=gtk3 --without-gconf --with-gsettings --without-makeinfo RUSTFLAGS="-g" --prefix="$pkg_prefix"
+    # ./autogen.sh
+    ./configure --with-gnutls=no --with-gameuser=:games --with-sound=alsa --with-xft --with-modules --with-x-toolkit=gtk3 --without-gconf --with-gsettings --without-makeinfo --prefix="$pkg_prefix"
+    attach
     make
 }
 
@@ -91,15 +106,3 @@ do_end() {
     fi
 }
 
-# _install_dependency() {
-#     local dep="${1}"
-#     if [[ -z "${NO_INSTALL_DEPS:-}" ]]; then
-# 	$HAB_BIN pkg path "$dep" || $HAB_BIN install -u $HAB_BLDR_URL --channel $HAB_BLDR_CHANNEL "$dep" || {
-# 		if [[ "$HAB_BLDR_CHANNEL" != "$FALLBACK_CHANNEL" ]]; then
-# 		    build_line "Trying to install '$dep' from '$FALLBACK_CHANNEL'"
-# 		    $HAB_BIN install -u $HAB_BLDR_URL --channel "$FALLBACK_CHANNEL" "$dep" || true
-# 		fi
-# 	    }
-#     fi
-#     return 0
-# }
