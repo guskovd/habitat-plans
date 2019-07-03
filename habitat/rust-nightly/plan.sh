@@ -8,7 +8,7 @@ segfaults, and guarantees thread safety.\
 "
 pkg_upstream_url="https://www.rust-lang.org/"
 pkg_license=('Apache-2.0' 'MIT')
-_url_base="http://static.rust-lang.org/dist"
+_url_base="http://static.rust-lang.org/dist/2019-05-01"
 pkg_source="$_url_base/${_distname}-nightly-x86_64-unknown-linux-gnu.tar.gz"
 pkg_dirname="${_distname}-nightly-x86_64-unknown-linux-gnu"
 pkg_deps=(
@@ -42,9 +42,7 @@ pkg_version() {
   #     1.24.0-2017-11-27
   local v
   v="$(cat "$CACHE_PATH/version")"
-  echo "$(\
-    echo "$v" | cut -d ' ' -f 1 | sed 's,-nightly$,,')-$(\
-    echo "$v" | cut -d ' ' -f 3 | sed 's,)$,,')"
+  echo "1.35.0-2019-05-01"
 }
 
 do_download() {

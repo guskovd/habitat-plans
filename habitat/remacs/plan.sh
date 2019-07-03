@@ -6,6 +6,7 @@ pkg_license=("Apache-2.0")
 pkg_source="https://github.com/Wilfred/remacs/archive/$pkg_version.tar.gz"
 pkg_shasum="f9af7103de6212f7bf9878a9fcdb3aeb3d6935a5968495c85482623c0b3a67ba"
 pkg_deps=(
+    core/grep
     core/gcc-libs
     core/ncurses
     core/zlib
@@ -37,14 +38,12 @@ pkg_deps=(
     core/libxmu
     core/gtk
     core/openssl
-)
-pkg_build_deps=(
-    core/openssl
+    core/cacerts
+    core/busybox-static
     core/coreutils
     core/diffutils
     guskovd/rustup/1.18.3
-    guskovd/rust-nightly
-    core/rust
+    guskovd/rust-nightly/1.35.0-2019-05-01
     core/gcc
     core/make
     core/autoconf
@@ -52,7 +51,6 @@ pkg_build_deps=(
     core/gzip
     core/texinfo
     core/glibc
-    core/zlib
     core/gmp
     core/pkg-config
     core/xproto
@@ -69,6 +67,13 @@ pkg_build_deps=(
     core/at-spi2-core
     core/dbus
     core/alsa-lib
+    core/gnutls
+    core/nettle
+    core/libtasn1
+    core/p11-kit
+    core/clang
+    core/clang-tools-extra
+    core/file/5.34/20190115003731
     guskovd/libxpm/3.5.12
 )
 pkg_bin_dirs=(bin)
@@ -90,7 +95,8 @@ do_clean() {
 
 do_build() {
     # ./autogen.sh
-    ./configure --with-gnutls=no --with-gameuser=:games --with-sound=alsa --with-xft --with-modules --with-x-toolkit=gtk3 --without-gconf --with-gsettings --without-makeinfo --prefix="$pkg_prefix"
+    attach
+    ./configure --with-gameuser=:games --with-sound=alsa --with-xft --with-modules --with-x-toolkit=gtk3 --without-gconf --with-gsettings --without-makeinfo --prefix="$pkg_prefix" --enable-rust-debug
     attach
     make
 }
