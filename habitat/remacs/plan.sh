@@ -47,7 +47,6 @@ pkg_deps=(
     core/autoconf
     core/automake
     core/gzip
-    core/texinfo
     core/glibc
     core/gmp
     core/pkg-config
@@ -101,7 +100,7 @@ do_build() {
     export LIBCLANG_PATH=$(pkg_path_for clang)/lib
     cp ${PLAN_CONTEXT}/autogen.sh .
     [[ -x configure ]] || ./autogen.sh
-    ./configure --with-gameuser=:games --with-sound=alsa --with-xft --with-modules --with-x-toolkit=gtk3 --without-gconf --with-gsettings --prefix="$pkg_prefix" --enable-rust-debug
+    ./configure --with-gameuser=:games --with-sound=alsa --with-xft --with-modules --with-x-toolkit=gtk3 --without-gconf --with-gsettings --without-makeinfo --infodir=/tmp --prefix="$pkg_prefix" --enable-rust-debug
     make MYCPPFLAGS+=-I$(pkg_path_for libxt)/include
 }
 
