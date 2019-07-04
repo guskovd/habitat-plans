@@ -5,7 +5,7 @@ pkg_maintainer="Danil Guskov <guskovd86@mail.ru>"
 pkg_license=("Apache-2.0")
 pkg_source="https://github.com/Wilfred/remacs/archive/$pkg_version.tar.gz"
 pkg_shasum="f9af7103de6212f7bf9878a9fcdb3aeb3d6935a5968495c85482623c0b3a67ba"
-pkg_deps=(
+pkg_build_deps=(
     core/grep
     core/gcc-libs
     core/ncurses
@@ -68,7 +68,7 @@ pkg_deps=(
     core/dbus
     core/alsa-lib
     core/gnutls
-    core/nettle
+    guskovd/nettle
     core/libtasn1
     core/p11-kit
     core/clang
@@ -76,16 +76,19 @@ pkg_deps=(
     core/file/5.34/20190115003731
     guskovd/libxpm/3.5.12
 )
+pkg_pconfig_dirs=(lib/pkgconfig)
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
+pkg_include_dirs=(
+    include
+    src
+)
 
 do_prepare() {
     if [[ ! -r /bin/pwd ]]; then
 	ln -sv "$(pkg_path_for coreutils)/bin/pwd" /bin/pwd
 	_clean_pwd=true
     fi
-    # rustup-init -y
-    # source $HOME/.cargo/env
 }
 
 do_clean() {
@@ -94,15 +97,15 @@ do_clean() {
 }
 
 do_build() {
-    # ./autogen.sh
-    attach
+    export LIBCLANG_PATH=$(pkg_path_for clang)/lib
+    cp ${PLAN_CONTEXT}/autogen.sh .
+    [[ -x configure ]] || ./autogen.sh
     ./configure --with-gameuser=:games --with-sound=alsa --with-xft --with-modules --with-x-toolkit=gtk3 --without-gconf --with-gsettings --without-makeinfo --prefix="$pkg_prefix" --enable-rust-debug
-    attach
-    make
+    make MYCPPFLAGS+=-I$(pkg_path_for libxt)/include
 }
 
 do_install() {
-    make install
+    make install PREFIX="$pkg_prefix"
 }
 
 do_end() {

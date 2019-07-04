@@ -1,16 +1,18 @@
 export LIBCLANG_PATH=$(pkg_path_for clang)/lib
-make EMACS_CFLAGS+=-I$(pkg_path_for libxt)/include \
-     EMACS_CFLAGS+=-I$PWD/src EMACS_CFLAGS+=-I$PWD/lib \
-     EMACS_CFLAGS+=-I$(pkg_path_for glibc)/include \
-     EMACS_CFLAGS+=-I$(pkg_path_for xproto)/include \
-     EMACS_CFLAGS+=-I$(pkg_path_for xlib)/include \
-     EMACS_CFLAGS+=-I$(pkg_path_for gnutls)/include \
-     EMACS_CFLAGS+=-I$(pkg_path_for gtk)/include/gtk-3.0 \
-     EMACS_CFLAGS+=-I$(pkg_path_for glib)/include/glib-2.0 \
-     EMACS_CFLAGS+=-I$(pkg_path_for glib)/lib/glib-2.0/include \
-     EMACS_CFLAGS+=-I$(pkg_path_for pango)/include/pango-1.0 \
-     EMACS_CFLAGS+=-I$(pkg_path_for cairo)/include/cairo \
-     EMACS_CFLAGS+=-I$(pkg_path_for gdk-pixbuf)/include/gdk-pixbuf-2.0 \
-     EMACS_CFLAGS+=-I$(pkg_path_for atk)/include/atk-1.0 \
-     EMACS_CFLAGS+=-I$(pkg_path_for glibc)/include \
-     EMACS_CFLAGS+=-I$(pkg_path_for libxcb)/include
+export EMACS_CFLAGS=-I$PWD/src
+make EMACS_CFLAGS+=-I$(pkg_path_for linux-headers)/include
+# make EMACS_CFLAGS+=-I$(pkg_path_for libxt)/include \
+#      EMACS_CFLAGS+=-I$PWD/src EMACS_CFLAGS+=-I$PWD/lib \
+#      EMACS_CFLAGS+=-I$(pkg_path_for glibc)/include \
+#      EMACS_CFLAGS+=-I$(pkg_path_for xproto)/include \
+#      EMACS_CFLAGS+=-I$(pkg_path_for xlib)/include \
+#      EMACS_CFLAGS+=-I$(pkg_path_for gnutls)/include \
+#      EMACS_CFLAGS+=-I$(pkg_path_for gtk)/include/gtk-3.0 \
+#      EMACS_CFLAGS+=-I$(pkg_path_for glib)/include/glib-2.0 \
+#      EMACS_CFLAGS+=-I$(pkg_path_for glib)/lib/glib-2.0/include \
+#      EMACS_CFLAGS+=-I$(pkg_path_for pango)/include/pango-1.0 \
+#      EMACS_CFLAGS+=-I$(pkg_path_for cairo)/include/cairo \
+#      EMACS_CFLAGS+=-I$(pkg_path_for gdk-pixbuf)/include/gdk-pixbuf-2.0 \
+#      EMACS_CFLAGS+=-I$(pkg_path_for atk)/include/atk-1.0 \
+#      EMACS_CFLAGS+=-I$(pkg_path_for glibc)/include \
+#      EMACS_CFLAGS+=-I$(pkg_path_for libxcb)/include

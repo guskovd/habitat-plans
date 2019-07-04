@@ -7,7 +7,7 @@ pkg_upstream_url="https://github.com/guskovd/habitat-plans"
 
 pkg_hab_shell_interpreter="bash"
 
-RUBY_VERSION=2.5.5
+RUBY_VERSION=2.5.1
 
 pkg_deps=(
     core/bash/4.4.19/20190115012619
@@ -25,7 +25,7 @@ pkg_deps=(
     core/sudo/1.8.18p1/20190117185055
     core/tar/1.30/20190115012709
     core/which/2.21/20190430084037
-    guskovd/vagrant/2.2.4/20190630061004
+    # guskovd/vagrant/2.2.4/20190630061004
 )
 
 do_shell() {
