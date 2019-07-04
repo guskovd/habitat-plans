@@ -5,7 +5,7 @@ pkg_maintainer="Danil Guskov <guskovd86@mail.ru>"
 pkg_license=("Apache-2.0")
 pkg_source="https://github.com/Wilfred/remacs/archive/$pkg_version.tar.gz"
 pkg_shasum="f9af7103de6212f7bf9878a9fcdb3aeb3d6935a5968495c85482623c0b3a67ba"
-pkg_build_deps=(
+pkg_deps=(
     core/grep
     core/gcc-libs
     core/ncurses
