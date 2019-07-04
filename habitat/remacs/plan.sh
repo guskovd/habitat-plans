@@ -42,8 +42,6 @@ pkg_build_deps=(
     core/busybox-static
     core/coreutils
     core/diffutils
-    guskovd/rustup/1.18.3
-    guskovd/rust-nightly/1.35.0-2019-05-01
     core/gcc
     core/make
     core/autoconf
@@ -68,12 +66,14 @@ pkg_build_deps=(
     core/dbus
     core/alsa-lib
     core/gnutls
-    guskovd/nettle
     core/libtasn1
     core/p11-kit
     core/clang
     core/clang-tools-extra
     core/file/5.34/20190115003731
+
+    guskovd/rust-nightly/1.35.0-2019-05-01
+    guskovd/nettle
     guskovd/libxpm/3.5.12
 )
 pkg_pconfig_dirs=(lib/pkgconfig)
