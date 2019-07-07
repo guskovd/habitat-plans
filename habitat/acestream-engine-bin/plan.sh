@@ -27,7 +27,6 @@ pkg_bin_dirs=(
     venv/bin
 )
 pkg_lib_dirs=(
-    lib
     venv/lib
 )
 
@@ -41,12 +40,19 @@ do_prepare() {
 }
 
 do_install() {
-    cp -rf $HAB_CACHE_SRC_PATH/$pkg_dirname/* $pkg_prefix/bin
+    cp -rf * $pkg_prefix/bin
     rm $pkg_prefix/bin/lib/lxml-3.7.2-py2.7-linux-x86_64.egg # lxml fix
     export SWIG_FEATURES="-cpperraswarn -includeall -I$($HAB_BIN pkg path core/openssl)/include"
-    source "$pkg_prefix/venv/bin/activate"
     pip install -r $PLAN_CONTEXT/requirements.txt
     pip freeze > $PLAN_CONTEXT/requirements.txt
+    cat <<EOF > "$pkg_prefix/bin/start-acestreamengine"
+#!$(pkg_path_for bash)/bin/bash
+set -e
+export PYTHONPATH="${PYTHONPATH}"
+export LD_LIBRARY_PATH="${pkg_prefix}/bin/lib"
+$pkg_prefix/bin/acestreamengine \$@
+EOF
+    chmod '+x' $pkg_prefix/bin/start-acestreamengine
 }
 
 do_build() {
