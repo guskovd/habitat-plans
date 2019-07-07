@@ -48,9 +48,10 @@ do_install() {
     cat <<EOF > "$pkg_prefix/bin/start-acestreamengine"
 #!$(pkg_path_for bash)/bin/bash
 set -e
+export PATH="${PATH}:\${PATH}"
 export PYTHONPATH="${PYTHONPATH}"
 export LD_LIBRARY_PATH="${pkg_prefix}/bin/lib"
-$pkg_prefix/bin/acestreamengine \$@
+exec $pkg_prefix/bin/acestreamengine \$@
 EOF
     chmod '+x' $pkg_prefix/bin/start-acestreamengine
 }
