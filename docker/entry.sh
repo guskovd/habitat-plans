@@ -1,7 +1,9 @@
 #!/usr/bin/env sh
 # -*- coding: utf-8 -*-
 
-mkdir -p /opt/qemu/{sock,images,volumes} 
+mkdir -p /opt/qemu/sock
+mkdir -p /opt/qemu/volumes
+mkdir -p /opt/qemu/images
 
 /usr/bin/qemu-system-x86_64 \
     -vga std \
