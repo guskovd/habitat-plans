@@ -1,10 +1,10 @@
 pkg_name=rustup
 pkg_origin=guskovd
-pkg_version=1.18.3
+pkg_version=1.19.0
 pkg_license=('BSD')
 pkg_bin_dirs=(bin)
 pkg_maintainer="Danil Guskov"
-pkg_shasum="9a2ae2c85bbbfc838b25d86d049bc677532950d78765725beabb8a61df1c2710"
+pkg_shasum="b5b2c1c369e44f0c6529169f0c4e680c257a13d220b643a31686033fff2a5983"
 pkg_upstream_url="https://github.com/rust-lang/rustup.rs"
 pkg_source="https://github.com/rust-lang/rustup.rs/archive/${pkg_version}.tar.gz"
 pkg_dirname=rustup.rs-${pkg_version}
