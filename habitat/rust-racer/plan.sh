@@ -1,6 +1,6 @@
 pkg_name=rust-racer
 pkg_origin=guskovd
-pkg_version=2.1.19
+pkg_version=2.1.27
 pkg_license=('BSD')
 pkg_bin_dirs=(bin)
 pkg_maintainer="Danil Guskov"

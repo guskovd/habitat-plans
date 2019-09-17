@@ -7,12 +7,15 @@ pkg_bin_dirs=(bin)
 pkg_upstream_url="https://github.com/sharkdp/fd"
 pkg_description="A simple, fast and user-friendly alternative to 'find'"
 
-pkg_deps=(
-    core/glibc
-    core/gcc-libs
-)
+# pkg_deps=(
+#     core/glibc
+#     core/gcc-libs
+# )
 
 pkg_build_deps=(
+    core/glibc
+    core/gcc
+    core/gcc-libs
     core/rust
 )
 
